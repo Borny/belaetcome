@@ -4,7 +4,12 @@
 
 $white: #fff;
 $black: #000;
+
+$tundora: #444;
+$dove-gray: #707070;
+
 $fountain-blue: #5dbeba;
+
 $school-bus-yellow: #ffde00;
 
 $primary-color: $fountain-blue;
@@ -21,30 +26,30 @@ $fontRoboto: 'Roboto', sans-serif;
 $base02-path: '/assets/fonts/base_02/Base02.ttf';
 
 @font-face {
-  font-family: Base02;
-  src: url($base02-path);
-  font-weight: normal;
-  font-style: normal;
+    font-family: Base02;
+    src: url($base02-path);
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: Sport;
-  src: url('/assets/fonts/TrueType/SFSportsNight.ttf');
-  font-weight: normal;
-  font-style: normal;
+    font-family: Sport;
+    src: url('/assets/fonts/TrueType/SFSportsNight.ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: TombRaider;
-  src: url('/assets/fonts/tombRaider/TombRaider.ttf');
-  font-weight: normal;
-  font-style: normal;
+    font-family: TombRaider;
+    src: url('/assets/fonts/tombRaider/TombRaider.ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: safeFromHarm;
-  src: url('/assets/fonts/safeFromHarm/safeFromHarm.ttf');
-  font-weight: normal;
-  font-style: normal;
+    font-family: safeFromHarm;
+    src: url('/assets/fonts/safeFromHarm/safeFromHarm.ttf');
+    font-weight: normal;
+    font-style: normal;
 }
 
 ////////////////
@@ -53,6 +58,7 @@ $base02-path: '/assets/fonts/base_02/Base02.ttf';
 
 $fontWeightLight: 300;
 $fontWeightBase: 400;
+$fontWeightSemi: 500;
 $fontWeightBold: 600;
 $fontWeightBolder: 700;
 

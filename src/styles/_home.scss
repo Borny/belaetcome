@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    flex-flow: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    img {
+        width: 170px;
+    }
+}
+
+.baseline {
+    font-size: 1rem;
+    color: $tundora;
+    font-weight: $fontWeightSemi;
+}
+
+.workinprogress {
+    p {
+        color: $white;
+        font-weight: $fontWeightBold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+.footer {
+    display: flex;
+    flex: 1;
+    z-index: 1;
+    .mask {
+        width: 150px;
+        height: 70%;
+        align-self: flex-end;
+        @include screen-sm {
+            width: 230px;
+            height: auto;
+            margin: 0 0 0 3rem;
+            align-self: inherit;
+        }
+    }
+    .links {
+        flex: 1;
+        margin: 5rem 0 0;
+        text-align: center;
+        align-self: center;
+        z-index: 1;
+        p {
+            padding: 0.1rem 0;
+        }
+    }
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    @include screen-sm {
+        width: 230px;
+    }
+}
