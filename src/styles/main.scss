@@ -1,10 +1,18 @@
 // Tools
-@import 'variables.scss';
-@import 'mixins.scss';
+@import './tools/variables.scss';
+@import './tools/mixins.scss';
 
 // Base
-@import 'normalize.scss';
-@import 'base.scss';
+@import './base/normalize.scss';
+@import './base/base.scss';
 
 // Components
-@import 'home.scss';
+@import './components/home.scss';
+@import './components/hero.scss';
+@import './components/compagnie.scss';
+@import './components/furiosa.scss';
+@import './components/galerie.scss';
+@import './components/residence.scss';
+@import './components/footer.scss';
+
+@import './components/buttons.scss'

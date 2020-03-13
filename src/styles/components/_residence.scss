@@ -1,0 +1,31 @@
+.residence {
+
+  background: $primary-color;
+
+  .container {
+    display: flex;
+
+    &--content {
+      flex: 1;
+      max-width: 50%;
+      padding: 0 3rem 0 12rem;
+
+      p {
+        text-align: justify;
+        margin: 0 0 1rem;
+      }
+    }
+
+    &--cta {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      .btn--base {
+        min-width: 220px;
+        margin: 0 0 1rem;
+      }
+    }
+  }
+}

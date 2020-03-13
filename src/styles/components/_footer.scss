@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background: $ternary-color;
+  color: $white;
+
+  @include screen-sm {
+    font-size: 0.8rem;
+    flex-flow: row;
+  }
+}

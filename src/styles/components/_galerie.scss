@@ -1,0 +1,105 @@
+.galerie {
+  .container {
+    max-width: $screen-md;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  .carousel {
+
+    .image-list {
+      display: flex;
+      align-items: center;
+      padding: 4rem;
+      flex-flow: row-reverse;
+      min-height: 540px;
+    }
+
+    .image-item,
+    .image--item__container {
+      margin: 0 auto;
+      transform-origin: 50% 50%;
+      overflow: hidden;
+      width: 250px;
+      height: 250px;
+    }
+
+    .image-item {
+      transform: rotate(45deg) translateY(10px);
+      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+      position: relative;
+      transition: .2s ease-out;
+
+      // &:nth-child(1) {
+      //   // width: 100px;
+      //   // height: 100px;
+      //   transform: rotate(45deg) translateY(10px) scale(.7);
+
+      //   .image--item__container {
+      //     // width: 105px;
+      //     // height: 105px;
+      //     transform: rotate(-45deg) translateY(-74px);
+      //   }
+      // }
+
+      // &:nth-child(2) {
+      //   transform: rotate(45deg) translateY(10px) scale(.8);
+      //   // width: 150px;
+      //   // height: 150px;
+
+      //   .image--item__container {
+      //     // width: 155px;
+      //     // height: 155px;
+      //     transform: rotate(-45deg) translateY(-74px);
+      //   }
+      // }
+
+      // &:nth-child(3) {
+      //   transform: rotate(45deg) translateY(10px) scale(.9);
+      //   // width: 200px;
+      //   // height: 200px;
+
+      //   .image--item__container {
+      //     // width: 205px;
+      //     // height: 205px;
+      //     transform: rotate(-45deg) translateY(-74px);
+      //   }
+      // }
+
+      // &:nth-child(4){
+      //   width: 100px;
+      //   height: 100px;
+      // }
+
+      &:not(:last-child) {
+        width: 200px;
+        height: 200px;
+      }
+
+      &:hover {
+        width: 250px;
+        height: 250px;
+        z-index: 4;
+
+        ~.image-item {
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+
+    .image--item__container {
+      width: 355px;
+      height: 355px;
+      transform: rotate(-45deg) translateY(-74px);
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+    }
+
+    .image--item__container {}
+
+  }
+}

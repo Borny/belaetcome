@@ -1,0 +1,54 @@
+.furiosa {
+  position: relative;
+  background: $secondary-color;
+
+  // &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: -60px;
+  //   left: -1060px;
+  //   z-index: -1;
+  //   display: block;
+  //   width: 200%;
+  //   height: 110%;
+  //   background: $secondary-color;
+  //   transform: rotate(15deg);
+  // }
+
+  .container {
+    display: flex;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+
+    &--secondary-heading {
+      margin: 0 0 1rem;
+    }
+
+    &--content {
+      flex: 1;
+      max-width: 50%;
+      padding: 0 3rem 0 12rem;
+
+      p {
+        text-align: justify;
+        margin: 0 0 3rem;
+      }
+    }
+
+    &--image {
+      flex: 1;
+      padding: 13rem 10rem 0 4rem;
+      max-width: 50%;
+
+      .image {
+        width: 100%;
+      }
+    }
+
+    &--cta {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}

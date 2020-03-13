@@ -1,0 +1,30 @@
+.compagnie {
+  .container {
+    padding: 1rem;
+    display: flex;
+
+    &--image {
+      flex: 1;
+
+      .image {
+        width: 100%;
+      }
+    }
+
+    &--content {
+      flex: 1;
+      max-width: 50%;
+      padding: 0 3rem;
+    }
+
+    &--secondary-heading {
+      text-align: right;
+      margin: 0 0 3rem;
+    }
+
+    p {
+      text-align: justify;
+      margin: 0 0 3rem;
+    }
+  }
+}
