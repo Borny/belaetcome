@@ -1,0 +1,23 @@
+.contact {
+  .container {
+    display: flex;
+
+    &--image {
+      flex: 1;
+      display: flex !important;
+      justify-content: flex-end;
+      position: relative;
+      z-index: -2;
+
+      .image {
+        margin: 1rem 0 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &--form {
+      flex: 1;
+      padding: 6rem 0 0;
+    }
+  }
+}

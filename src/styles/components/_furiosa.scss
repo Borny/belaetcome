@@ -1,6 +1,19 @@
 .furiosa {
   position: relative;
-  background: $secondary-color;
+  padding: 0 0 11rem;
+
+  .furiosa--bg {
+
+    background: $secondary-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: skew(0, 15deg);
+
+  }
+
 
   // &:before {
   //   content: '';
@@ -21,18 +34,20 @@
     position: relative;
     z-index: 1;
 
-    &--secondary-heading {
-      margin: 0 0 1rem;
-    }
-
     &--content {
       flex: 1;
       max-width: 50%;
       padding: 0 3rem 0 12rem;
 
+
       p {
         text-align: justify;
-        margin: 0 0 3rem;
+        margin: 0 0 1rem;
+
+        &:nth-child(3) {
+          margin: 0 0 2rem
+        }
+
       }
     }
 
@@ -49,6 +64,13 @@
     &--cta {
       display: flex;
       flex-flow: column;
+      align-items: flex-start;
+      padding: 2rem 0 0;
+
+      .btn--base {
+        min-width: 250px;
+        margin: 0 0 1rem;
+      }
     }
   }
 }

@@ -1,3 +1,5 @@
+// MEDIA SIZE
+
 @mixin screen-xs {
   @media (min-width: $screen-xs) {
     @content;
@@ -8,4 +10,9 @@
   @media (min-width: $screen-sm) {
     @content;
   }
+}
+
+// BACKGROUND OPACITY
+@mixin backgroundOpacity($colorRGB, $opacity) {
+  background: rgba($colorRGB, $opacity);
 }

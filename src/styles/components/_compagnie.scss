@@ -1,4 +1,5 @@
 .compagnie {
+
   .container {
     padding: 1rem;
     display: flex;
@@ -19,12 +20,12 @@
 
     &--secondary-heading {
       text-align: right;
-      margin: 0 0 3rem;
+      margin: 0 0 1rem;
     }
 
     p {
       text-align: justify;
-      margin: 0 0 3rem;
+      margin: 0 0 1rem;
     }
   }
 }

@@ -3,15 +3,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true }
+        use: [{
+          loader: 'html-loader',
+          options: {
+            minimize: true
           }
-        ]
+        }]
       },
       {
         test: /\.js$/,
@@ -19,15 +18,13 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.(svg|png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false
-            }
+        test: /\.(svg|png|jpe?g|gif|otf)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            esModule: false
           }
-        ]
+        }]
       },
       {
         test: /\.scss$/,
