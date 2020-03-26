@@ -1,26 +1,39 @@
 .compagnie {
 
   .container {
-    padding: 1rem;
     display: flex;
+    flex-flow: column;
+    padding: 0 1rem 2rem;
 
-    &--image {
-      flex: 1;
+    @include screen-sm {
+      flex-flow: row;
+    }
+
+    &__image {
+      @include screen-sm {
+        width: 50%;
+      }
 
       .image {
         width: 100%;
       }
     }
 
-    &--content {
-      flex: 1;
-      max-width: 50%;
-      padding: 0 3rem;
+    &__content {
+      @include screen-sm {
+        width: 50%;
+        padding: 0 0 0 3rem;
+      }
     }
 
-    &--secondary-heading {
-      text-align: right;
+    &__secondary-heading {
+      text-align: center;
       margin: 0 0 1rem;
+
+      @include screen-sm {
+        margin: 3rem 0 2rem;
+        text-align: right;
+      }
     }
 
     p {

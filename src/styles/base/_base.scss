@@ -18,12 +18,10 @@ html {
 
 body {
   height: 100%;
-  // font-size: 0.8rem;
   font-family: $fontRoboto;
   color: $font-color;
 
   @include screen-sm {
-    font-size: 1rem;
 
     p {
       font-size: 0.9rem;
