@@ -12,7 +12,7 @@
         <div class="logo-container">
           <div class="logo-container__background"></div>
           <img
-            alt="log bela et come"
+            alt="logo bela et come"
             class="logo"
             src="./images/logo-bela-come.svg"
           />
@@ -309,7 +309,7 @@
     </section>
     <section id="contact" class="contact">
       <div class="container">
-        <div class="mobile-hidden container--image">
+        <div class="container__image">
           <img
             alt="main dessin"
             class="image"
@@ -319,35 +319,34 @@
         <div class="container__form">
           <h2 class="secondary-heading">Contact</h2>
           <form class="form">
-            <div class="input--element input__text">
-              <input class="input__field" type="text" />
-              <label class="input__label">
-                <span class="input___label--content">Name</span>
+            <div class="form__group form--text">
+              <input class="form__control" type="text" />
+              <label class="form__label">
+                <span class="form__label--content">Name</span>
               </label>
             </div>
 
-            <div class="input_element input_text">
-              <input class="input_field" type="text" />
-              <label class="input_label">
-                <span class="input_label-content">Email</span>
+            <div class="form__group form--text">
+              <input class="form__control" type="text" />
+              <label class="form__label">
+                <span class="form__label--content">Email</span>
               </label>
             </div>
 
-            <div class="input_element input_text">
-              <input class="input_field" type="text " />
-              <label class="input_label">
-                <span class="input_label-content">Object</span>
+            <div class="form__group form--text">
+              <input class="form__control" type="text " />
+              <label class="form__label">
+                <span class="form__label--content">Object</span>
               </label>
             </div>
 
-            <div class="input_element input_text">
-              <textarea class="input_field" row="3"></textarea>
-              <label class="input_label">
-                <span class="input_label-content">Message</span>
+            <div class="form__group form--textarea">
+              <textarea class="form__control"></textarea>
+              <label class="form__label">
+                <span class="form__label--content">Message</span>
               </label>
             </div>
             <button
-              class="btn--plain"
               type="button"
               id="submit-contact-btn"
               class="btn--plain"

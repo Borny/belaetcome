@@ -1,5 +1,6 @@
 .residence {
   position: relative;
+  z-index: $zindex-residence-section;
 
   .residence--bg {
     background: $primary-color;
@@ -13,18 +14,19 @@
   }
 
   .secondary-heading {
-    text-align: right;
+    text-align: center;
     padding: 4rem 1rem 1rem;
 
     @include screen-sm {
-      padding: 4rem 5rem 1rem;
+      text-align: right;
+      padding: 4rem 13rem 1rem;
     }
   }
 
   .container {
     display: flex;
     flex-flow: column;
-    padding: 1rem;
+    padding: 1rem 1rem 3rem;
 
     @include screen-sm {
       flex-flow: row;

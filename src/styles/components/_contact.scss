@@ -1,23 +1,60 @@
 .contact {
+  position: relative;
+  z-index: $zindex-contact-section;
+
   .container {
     display: flex;
+    flex-flow: column;
+    padding: 1rem;
 
-    &--image {
-      flex: 1;
-      display: flex !important;
-      justify-content: flex-end;
-      position: relative;
-      z-index: -2;
+    @include screen-sm {
+      flex-flow: row;
+    }
+
+    .secondary-heading {
+      margin: 0 auto;
+      max-width: 350px;
+    }
+
+    &__image {
+      height: 160px;
+
+      @include screen-sm {
+        height: initial;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex: 1;
+        margin: -4rem 0 0;
+
+      }
 
       .image {
-        margin: 1rem 0 0;
-        transform: rotate(-45deg);
+        max-width: 50%;
+        position: absolute;
+        top: -12%;
+        right: 20%;
+        transform: rotate(45deg);
+
+        @include screen-sm {
+          position: relative;
+          top: 0;
+          right: 0;
+          transform: rotate(-45deg);
+        }
       }
     }
 
-    &--form {
+    &__form {
       flex: 1;
-      padding: 6rem 0 0;
+
+      @include screen-sm {
+        padding: 7rem 0 0;
+      }
+    }
+
+    .btn--plain {
+      margin: 0 auto;
     }
   }
 }

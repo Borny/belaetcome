@@ -1,109 +1,117 @@
-.container--secondary-heading,
 .form {
-  max-width: 350px;
-  margin: auto;
-}
+  display: flex;
+  flex-flow: column;
 
-.input_element {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 280px;
+  &__group {
+    position: relative;
+    max-width: 280px;
 
-  @include screen-sm {
-    max-width: 350px;
+    @include screen-sm {
+      max-width: 350px;
+    }
   }
-}
 
-.input_text {
-  display: block;
-  margin: 20px auto;
+  &--text,
+  &--textarea {
+    margin: 20px auto;
+    width: 100%;
 
-  // when the input is filled
-  &.filled {
-    .input_field {
-      border-bottom: 1px solid $primary-color;
+    // when the input is filled
+    &.filled {
+      .form__control {
+        border-bottom: 1px solid $primary-color;
+      }
+
+      .form__label {
+        .form__label--content {
+          color: $primary-color;
+          -webkit-transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8);
+          transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8) translateZ(1px);
+
+        }
+      }
     }
 
-    .input_label {
-      .input_label-content {
-        color: $primary-color;
-        -webkit-transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8);
-        transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8) translateZ(1px);
-
+    // error state
+    &.error {
+      .form__control {
+        border-bottom: 1px solid $red;
+        color: $red;
       }
     }
   }
 
-  // error state
-  &.error {
-    .input_field {
-      border-bottom: 1px solid $red;
-      color: $red;
-    }
-  }
-}
+  &--textarea {
+    &.filled {
+      min-height: 100px;
 
-.input_field {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  color: $tertiary-color;
-  border-bottom: 1px solid $gray-light;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-
-  &:hover {
-    ~.input_label {
-      color: $gray-light;
-    }
-  }
-
-  &:focus {
-    outline: 0;
-
-    ~.input_label {
-      &:after {
-        visibility: visible;
-        width: 100%;
-        left: 0;
-      }
-
-      .input_label-content {
-        color: $primary-color;
-        -webkit-transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8);
-        transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8) translateZ(1px);
+      .form__control {
+        padding: 1rem 0 0;
       }
     }
   }
-}
 
-.input_label {
-  display: block;
-  color: $gray-light;
-
-  &:after {
-    content: '';
+  &__control {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    height: 2px;
-    width: 10px;
-    visibility: hidden;
-    background: $primary-color;
-    transition: 0.2s ease all;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: $tertiary-color;
+    border-bottom: 1px solid $gray-light;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    &:hover {
+      ~.form__label {
+        color: $gray-light;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+
+      ~.form__label {
+        &:after {
+          visibility: visible;
+          width: 100%;
+          left: 0;
+        }
+
+        .form__label--content {
+          color: $primary-color;
+          -webkit-transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8);
+          transform: translate3d(0, -1.4em, 0) scale3d(0.8, 0.8, 0.8) translateZ(1px);
+        }
+      }
+    }
   }
 
-  .input_label-content {
+  &__label {
     display: block;
-    padding: .9em 0 .7em;
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    -webkit-transform-origin: 0 50%;
-    transform-origin: 0 50%;
+    color: $gray-light;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      height: 2px;
+      width: 10px;
+      visibility: hidden;
+      background: $primary-color;
+      transition: 0.2s ease all;
+    }
+
+    &--content {
+      display: block;
+      padding: .9em 0 .7em;
+      -webkit-transition: -webkit-transform 0.3s;
+      transition: transform 0.3s;
+      -webkit-transform-origin: 0 50%;
+      transform-origin: 0 50%;
+    }
   }
 }

@@ -1,11 +1,13 @@
 section {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    &.contact {
-        min-height: calc(100vh - 65px);
+  &.contact {
+    @include screen-sm {
+      min-height: calc(100vh - 65px);
     }
+  }
 }
 
 .secondary-heading {
-    font-family: SourceCode;
+  font-family: SourceCode;
 }
