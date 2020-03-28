@@ -10,6 +10,7 @@
   }
 
   .background--bottom {
+    -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
     clip-path: polygon(100% 0, 0 0, 50% 100%);
     background: $primary-color;
     height: 6rem;
@@ -30,6 +31,7 @@
     width: 100%;
     max-width: 400px;
     height: 100%;
+    -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
     clip-path: polygon(100% 0, 0 0, 50% 100%);
     background: $white;
   }

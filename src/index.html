@@ -52,7 +52,7 @@
                 <a class="menu__link" href="#furiosa">Furiosa</a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#galerie">Galerie</a>
+                <a class="menu__link" href="#gallery">Galerie</a>
               </li>
               <li class="menu__item">
                 <a class="menu__link" href="#residence">Accueil en résidence</a>
@@ -92,7 +92,7 @@
           <ul class="second-list">
             <span></span>
             <li>
-              <a class="link" id="link2" href="#galerie">Galerie</a>
+              <a class="link" id="link2" href="#gallery">Galerie</a>
             </li>
             <li><a class="link" href="#residence">Accueil en résidence</a></li>
             <span></span>
@@ -230,32 +230,34 @@
         </div>
       </div>
     </section>
-    <section id="galerie" class="galerie">
+    <section id="gallery" class="gallery">
       <div class="container">
         <h2 class="secondary-heading">Galerie</h2>
         <div class="carousel">
-          <ul class="image-list">
-            <li class="image-item">
+          <ul class="image--list" id="gallery-container">
+            <li class="image--item image--item--4">
               <div class="image--item__container">
                 <img class="image" src="./images/mobile.png" alt="mobile" />
               </div>
             </li>
-            <li class="image-item">
+            <li class="image--item image--item--3">
               <div class="image--item__container">
                 <img class="image" src="./images/bela-2.png" alt="bela" />
               </div>
             </li>
-            <li class="image-item">
+            <li class="image--item image--item--2">
               <div class="image--item__container">
                 <img class="image" src="./images/come.png" alt="come" />
               </div>
             </li>
-            <li class="image-item">
+            <li class="image--item image--item--1">
               <div class="image--item__container">
                 <img class="image" src="./images/bela.png" alt="bela" />
               </div>
             </li>
           </ul>
+          
+          <div class="slider--controls desktop--hidden" id="slider--controls"></div>
         </div>
       </div>
     </section>

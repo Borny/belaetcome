@@ -1,105 +1,146 @@
-.galerie {
+.gallery {
   .container {
-    max-width: $screen-md;
-    margin: 0 auto;
-    padding: 1rem 0;
+
+    .secondary-heading {
+      padding: 3rem 0 2rem 1rem;
+
+      @include screen-sm {
+        padding: 3rem 0 0 6rem;
+      }
+    }
   }
 
   .carousel {
+    overflow-x: hidden;
+    padding: 0 0 6rem;
 
-    .image-list {
+    @include screen-sm {
+      max-width: $screen-md;
+      margin: 0 auto;
+      overflow-x: initial;
+      padding: initial;
+    }
+
+    .image--list {
       display: flex;
       align-items: center;
-      padding: 4rem;
-      flex-flow: row-reverse;
-      min-height: 540px;
-    }
+      overflow-y: hidden;
+      height: 100vw;
+      max-height: 100vh;
+      --n: 1;
+      width: 100%;
+      width: calc(var(--n)*100%);
+      transform: translate(calc(var(--i, 0)/var(--n)*-100% + var(--tx, 0px)));
 
-    .image-item,
-    .image--item__container {
-      margin: 0 auto;
-      transform-origin: 50% 50%;
-      overflow: hidden;
-      width: 250px;
-      height: 250px;
-    }
-
-    .image-item {
-      transform: rotate(45deg) translateY(10px);
-      box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
-      position: relative;
-      transition: .2s ease-out;
-
-      // &:nth-child(1) {
-      //   // width: 100px;
-      //   // height: 100px;
-      //   transform: rotate(45deg) translateY(10px) scale(.7);
-
-      //   .image--item__container {
-      //     // width: 105px;
-      //     // height: 105px;
-      //     transform: rotate(-45deg) translateY(-74px);
-      //   }
-      // }
-
-      // &:nth-child(2) {
-      //   transform: rotate(45deg) translateY(10px) scale(.8);
-      //   // width: 150px;
-      //   // height: 150px;
-
-      //   .image--item__container {
-      //     // width: 155px;
-      //     // height: 155px;
-      //     transform: rotate(-45deg) translateY(-74px);
-      //   }
-      // }
-
-      // &:nth-child(3) {
-      //   transform: rotate(45deg) translateY(10px) scale(.9);
-      //   // width: 200px;
-      //   // height: 200px;
-
-      //   .image--item__container {
-      //     // width: 205px;
-      //     // height: 205px;
-      //     transform: rotate(-45deg) translateY(-74px);
-      //   }
-      // }
-
-      // &:nth-child(4){
-      //   width: 100px;
-      //   height: 100px;
-      // }
-
-      &:not(:last-child) {
-        width: 200px;
-        height: 200px;
+      &.smooth {
+        transition: transform calc(var(--f, 1)*.5s) ease-out;
       }
 
-      &:hover {
+      @include screen-sm {
+        overflow-y: initial;
+        height: auto;
+        max-height: auto;
+        padding: 4rem;
+        min-height: 540px;
+        width: 100%;
+      }
+    }
+
+    .image--item,
+    .image--item__container {
+      width: 100%;
+
+      @include screen-sm {
+        margin: 0 auto;
+        transform-origin: 50% 50%;
+        overflow: hidden;
         width: 250px;
         height: 250px;
-        z-index: 4;
+      }
+    }
 
-        ~.image-item {
+    .image--item {
+      pointer-events: none; // needed for the swipe to work
+
+      @include screen-sm {
+        transform: rotate(45deg) translateY(10px);
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+        position: relative;
+        transition: .2s ease-out;
+        pointer-events: initial;
+
+        &:not(:last-child) {
           width: 200px;
           height: 200px;
         }
+
+        &:hover {
+          width: 250px;
+          height: 250px;
+          z-index: 4;
+
+          ~.image--item {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+
+      &--1 {
+        order: 1;
+      }
+
+      &--2 {
+        order: 2;
+      }
+
+      &--3 {
+        order: 3;
+      }
+
+      &--4 {
+        order: 4;
       }
     }
 
     .image--item__container {
-      width: 355px;
-      height: 355px;
-      transform: rotate(-45deg) translateY(-74px);
+
+      @include screen-sm {
+        width: 355px;
+        height: 355px;
+        transform: rotate(-45deg) translateY(-74px);
+      }
     }
 
     .image {
-      width: 100%;
-      height: auto;
+      height: 100vw;
+
+      @include screen-sm {
+        width: 100%;
+        height: auto;
+      }
     }
 
-    .image--item__container {}
+    // Controls
+    .slider--controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .slider--control {
+        width: 10px;
+        height: 10px;
+        background: transparent;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        margin: 0.5rem;
+        transition: 0.2s ease;
+
+        &.active {
+          background: $primary-color
+        }
+      }
+    }
 
   }
 }
