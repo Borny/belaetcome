@@ -1,5 +1,7 @@
 import './styles/main.scss';
 
+const body = document.getElementsByTagName('body')[0];
+
 //////////////////////
 // MOBILE NAV TOGGLE
 //////////////////////
@@ -147,3 +149,23 @@ submitContactBtn.addEventListener('click', () => {
   console.log('button clicked');
   alert('you sure you wanna do this???')
 })
+
+//////////
+// MODAL
+//////////
+
+const modalCalendar = document.getElementById('calendar-modal');
+const calendarModalBtnHandler = document.getElementById('show-calendar-btn');
+const closeModalBtn = document.getElementById('close-modal-btn');
+const modalBackdrop = document.getElementById('modal-backdrop');
+
+const calendarModalHandler = () => {
+  console.log(body)
+  modalCalendar.classList.toggle('visible');
+  modalBackdrop.classList.toggle('visible');
+  body.classList.toggle('modal-open');
+}
+
+calendarModalBtnHandler.addEventListener('click', calendarModalHandler);
+closeModalBtn.addEventListener('click', calendarModalHandler);
+modalBackdrop.addEventListener('click', calendarModalHandler);

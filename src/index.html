@@ -7,6 +7,61 @@
     <title>Compagnie Bela et Côme</title>
   </head>
   <body>
+    <div class="backdrop" id="modal-backdrop"></div>
+    <div class="modal calendar" id="calendar-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <button type="button" id="close-modal-btn" class="btn__modal--close">
+            <svg viewbox="0 0 100 100" 
+            xmlns="http://www.w3.org/2000/svg" fill="transparent">
+              <line x1="0" y1="0" x2="100" y2="100" stroke="#444" stroke-width="10" />
+              <line x1="0" y1="100" x2="100" y2="0" stroke="#444" stroke-width="10"/>
+            </svg>
+          </button>
+        </div>
+        <h2 class="secondary-heading">Calendrier</h2>
+        <p>
+          Neuf semaines de répétitions
+        </p>
+        <br>
+        <p>
+          <strong>
+            La Clé du Quai – Le Tchaï à Bordeaux
+          </strong>
+        </p>
+          <p  class="font-color-primary">
+            9 au 12 Septembre 2019
+          </p>
+          <p class="font-color-primary">18 au 21 Novembre 2019</p>
+          <p>
+            <strong>            La Faktoria - Choreographic Center à Pampelune</strong>
+          </p>
+          <p class="font-color-primary">3 au 7 Février 2020</p>
+          <p>
+            <strong>            La Clé du Quai – Le Tchaï à Bordeaux</strong>
+          </p>
+          <p  class="font-color-primary">16 au 19 Mars 2020</p>
+          <p class="font-color-primary">20 au 24 Avril 2020</p>
+          <p>
+            <strong>            4 semaines de travail Lieux à définir </strong>
+          </p>
+          <p class="font-color-primary">
+            Mai 2020 à Février 2021
+          </p>
+          <br>
+        <p>
+          Résidences et actions de médiation en établissements scolaires bordelais.<br>
+          Lycées Sainte Famille, Mirail et Montesquieu à confirmer.
+        </p>
+        <br>
+        <p>
+          Extraits publics à partir de Septembre 2020.<br>
+          Lecture publique avec La Boîte à Jouer le 28/02/2020.<br>
+          <strong>Avant-première :</strong> Printemps 2021.<br>
+          <strong>Première :</strong> Automne 2021.
+        </p>
+      </div>
+    </div>
     <section id="hero" class="hero">
       <div class="container">
         <div class="logo-container">
@@ -220,10 +275,10 @@
             Choreographic center.
           </p>
           <div class="container__cta">
-            <button type="button" class="btn--base btn--color-secondary">
+            <button type="button" class="btn--base btn--color-secondary" id="show-calendar-btn">
               Calendrier
             </button>
-            <a class="btn--base btn--color-secondary" href="#"
+            <a class="btn--base btn--color-secondary" target="blank" href="/assets/documents/furiosa-theatre-danse-cie-bela-come-avec-annexe-mediation.pdf"
               >Dossier artisitique complet</a
             >
           </div>
@@ -256,7 +311,7 @@
               </div>
             </li>
           </ul>
-          
+
           <div class="slider--controls desktop--hidden" id="slider--controls"></div>
         </div>
       </div>

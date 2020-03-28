@@ -21,6 +21,10 @@ body {
   font-family: $fontRoboto;
   color: $font-color;
 
+  &.modal-open {
+    overflow: hidden;
+  }
+
   @include screen-sm {
 
     p {
@@ -102,6 +106,10 @@ textarea {
   @include screen-sm() {
     display: none !important;
   }
+}
+
+.font-color-primary {
+  color: $primary-color;
 }
 
 //////////
