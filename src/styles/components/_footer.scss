@@ -6,6 +6,11 @@
   background: $tertiary-color;
   color: $white;
 
+  p {
+    font-weight: $fontWeightLight;
+    margin: 0 0 0.3rem;
+  }
+
   @include screen-sm {
     font-size: 0.8rem;
     flex-flow: row;
