@@ -14,5 +14,10 @@
   @include screen-sm {
     font-size: 0.8rem;
     flex-flow: row;
+    justify-content: center;
+
+    p {
+      margin: initial;
+    }
   }
 }

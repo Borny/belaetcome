@@ -1,5 +1,11 @@
 import './styles/main.scss';
 
+// VARIABLES
+const body = document.getElementsByTagName('body')[0];
+
+///////////
+// LOADER
+///////////
 window.onload = function () {
   document.getElementById("loader").style.opacity = 0
   document.getElementById('loader-path').style.opacity = 0;
@@ -7,8 +13,6 @@ window.onload = function () {
     document.getElementById("loader").style.display = "none"
   }, 2000)
 }
-
-const body = document.getElementsByTagName('body')[0];
 
 //////////////////////
 // MOBILE NAV TOGGLE
@@ -29,9 +33,9 @@ mobileNavLinks.forEach(link => {
   link.addEventListener('click', toggleMobileNav)
 })
 
-///////////
+////////////
 // GALLERY
-///////////
+////////////
 
 const galleryContainer = document.getElementById('gallery-container');
 const images = document.querySelectorAll('.image--item');
@@ -126,37 +130,37 @@ activateSliderControlBackground();
 
 // INPUT LABEL ANIMATION
 // Gets all the input_field elements of the page
-const inputFields = document.querySelectorAll('.form__control');
-const submitContactBtn = document.getElementById('submit-contact-btn');
+// const inputFields = document.querySelectorAll('.form__control');
+// const submitContactBtn = document.getElementById('submit-contact-btn');
 
-const focusOnInput = (input) => {
-  if (input) {
-    input.target.value !== '' ?
-      input.target.parentNode.classList.add('filled') :
-      input.target.parentNode.classList.remove('filled')
-  }
-}
+// const focusOnInput = (input) => {
+//   if (input) {
+//     input.target.value !== '' ?
+//       input.target.parentNode.classList.add('filled') :
+//       input.target.parentNode.classList.remove('filled')
+//   }
+// }
 
-// Goes through the array inputFields
-inputFields.forEach(input => {
-  // Creates an event listener on the current input_field
-  input.addEventListener('input', focusOnInput.bind(this));
-})
+// // Goes through the array inputFields
+// inputFields.forEach(input => {
+//   // Creates an event listener on the current input_field
+//   input.addEventListener('input', focusOnInput.bind(this));
+// })
 
-// Clears the inputs on page load
-const clearInputs = () => {
-  inputFields.forEach(input => {
-    input.value = '';
-  })
-}
+// // Clears the inputs on page load
+// const clearInputs = () => {
+//   inputFields.forEach(input => {
+//     input.value = '';
+//   })
+// }
 
-clearInputs();
+// clearInputs();
 
-// SUBMIT BUTTON
-submitContactBtn.addEventListener('click', () => {
-  console.log('button clicked');
-  alert('you sure you wanna do this???')
-})
+// // SUBMIT BUTTON
+// submitContactBtn.addEventListener('click', () => {
+//   console.log('button clicked');
+//   alert('you sure you wanna do this???')
+// })
 
 //////////
 // MODAL
@@ -168,7 +172,6 @@ const closeModalBtn = document.getElementById('close-modal-btn');
 const modalBackdrop = document.getElementById('modal-backdrop');
 
 const calendarModalHandler = () => {
-  console.log(body)
   modalCalendar.classList.toggle('visible');
   modalBackdrop.classList.toggle('visible');
   body.classList.toggle('modal-open');

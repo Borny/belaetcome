@@ -21,22 +21,35 @@
         opacity: 1;
         transition: 1s ease;
       }
+      .circular-loader{
+        animation: rotate 2s infinite;
+      }
       .loader-path {
+        opacity: 1;
         stroke-dasharray: 125;
         stroke-dashoffset: 125;
         stroke-linecap: round;
-        animation: dash 1s ease-in-out infinite;
-        opacity: 1;
         transition: 1s ease;
+        animation: dash 2s infinite;
       }
-
       @keyframes dash {
-        from {
+        0% {
           stroke-dashoffset: 125;
         }
-
-        to {
+        50% {
           stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: -125;
+        }
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0);
+        }
+        
+        to {
+          transform: rotate(360deg);
         }
       }
     </style>
@@ -415,7 +428,34 @@
         </div>
         <div class="container__form">
           <h2 class="secondary-heading">Contact</h2>
-          <form class="form">
+          <div class="contact__info">
+            <p>
+              <strong>Compagnie Bela&Côme</strong>
+            </p>
+            <p>
+              <br>
+              <br>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
+                  <path id="ic_mail_outline_24px" d="M20,4H4A2,2,0,0,0,2.01,6L2,18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,20,4Zm0,14H4V8l8,5,8-5Zm-8-7L4,6H20Z" transform="translate(-2 -4)"/>
+                </svg>
+              </span>
+              Association La Clé du Quai<br>
+              49 rue du Mirail 33000 Bordeaux
+            </p>
+            <p>
+              <span>@</span>
+              cie.bela.come@gmail.com</p>
+            <p>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                  <path id="ic_call_24px" d="M6.62,10.79a15.149,15.149,0,0,0,6.59,6.59l2.2-2.2a.994.994,0,0,1,1.02-.24,11.407,11.407,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.25,1.02Z" transform="translate(-3 -3)"/>
+                </svg>                
+              </span>
+              0662126335 - 0650391216
+            </p>
+          </div>
+          <form class="form hidden">
             <div class="form__group form--text">
               <input class="form__control" type="text" />
               <label class="form__label">
@@ -456,11 +496,11 @@
     </section>
     <footer id="footer" class="footer">
       <p>Copyright © 2020 | belaetcome</p>
-      <p>
+      <p class="hidden">
         Compagnie Bela&Côme | Association La Clé du Quai | 49 rue du Mirail,
         33000 Bordeaux
       </p>
-      <p>cie.bela.come@gmail.com | 0662126335 - 0650391216</p>
+      <p class="hidden">cie.bela.come@gmail.com | 0662126335 - 0650391216</p>
     </footer>
   </body>
 </html>
