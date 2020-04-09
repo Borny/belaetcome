@@ -18,11 +18,11 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.(svg|png|jpe?g|gif|otf)$/i,
+        test: /\.(svg|png|jpe?g|gif|otf|pdf)$/i,
         use: [{
           loader: 'file-loader',
           options: {
-            esModule: false
+            esModule: false,
           }
         }]
       },

@@ -112,6 +112,16 @@ textarea {
   color: $primary-color;
 }
 
+.phone-number {
+  color: $font-color;
+  padding: 0 0.3rem;
+  transition: 0.2s ease;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
 //////////
 // HACKS
 //////////
