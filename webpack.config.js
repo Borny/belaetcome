@@ -1,11 +1,14 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const fs = require('fs');
 
 module.exports = {
   devServer: {
     hot: true,
     http2: true,
-    https: true
+    https: true,
+    key: fs.readFileSync('./ssl/server.key'),
+    cert: fs.readFileSync('./ssl/server.crt'),
   },
   module: {
     rules: [{
