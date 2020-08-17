@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import '../favicon/favicons';
+import '../favicons/favicons';
 
 // VARIABLES
 const body = document.getElementsByTagName('body')[0];
