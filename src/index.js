@@ -1,6 +1,10 @@
 import './styles/main.scss';
 import '../favicons/favicons';
 
+import { collapseFnc } from './js/repertoire';
+
+collapseFnc();
+
 // VARIABLES
 const body = document.getElementsByTagName('body')[0];
 
@@ -12,7 +16,7 @@ window.onload = function () {
   document.getElementById('loader-path').style.opacity = 0;
   setTimeout(() => {
     document.getElementById("loader").style.display = "none"
-  }, 2000)
+  }, 1000)
 }
 
 //////////////////////
@@ -180,3 +184,4 @@ const calendarModalHandler = () => {
 calendarModalBtnHandler.addEventListener('click', calendarModalHandler);
 closeModalBtn.addEventListener('click', calendarModalHandler);
 modalBackdrop.addEventListener('click', calendarModalHandler);
+

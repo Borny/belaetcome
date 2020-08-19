@@ -19,7 +19,8 @@ $primary-color: $fountain-blue;
 $secondary-color: $school-bus-yellow;
 $tertiary-color: $tundora;
 $gray-light: $dove-gray;
-$font-color: $mine-shaft;
+$gray-dark:$mine-shaft;
+$font-color: $gray-dark;
 
 //////////
 // FONTS
@@ -41,34 +42,6 @@ $sourceCode-path: '../assets/fonts/source-code-pro/SourceCodePro-Medium.otf';
   font-weight: normal;
   font-style: normal;
 }
-
-// @font-face {
-//   font-family: Base02;
-//   src: url($base02-path);
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: Sport;
-//   src: url('/assets/fonts/TrueType/SFSportsNight.ttf');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: TombRaider;
-//   src: url('/assets/fonts/tombRaider/TombRaider.ttf');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: safeFromHarm;
-//   src: url('/assets/fonts/safeFromHarm/safeFromHarm.ttf');
-//   font-weight: normal;
-//   font-style: normal;
-// }
 
 ////////////////
 // FONT WEIGHT

@@ -26,6 +26,7 @@ body {
   }
 
   @include screen-sm {
+
     p,
     li {
       font-size: 0.9rem;
@@ -95,7 +96,7 @@ textarea {
 .mobile--hidden {
   display: none !important;
 
-  @include screen-sm() {
+  @include screen-sm {
     display: flex !important;
   }
 }
@@ -103,7 +104,7 @@ textarea {
 .desktop--hidden {
   display: flex;
 
-  @include screen-sm() {
+  @include screen-sm {
     display: none !important;
   }
 }

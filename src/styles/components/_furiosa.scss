@@ -23,9 +23,7 @@
     @include screen-sm {
       display: grid;
       grid-template:
-        "containerTitle containerTitle"auto "containerContent containerImage"auto / 1fr 1fr;
-
-
+        "containerTitle containerTitle"auto "containerContent containerImage"auto "containerRepertoire containerRepertoire"auto / 1fr 1fr;
     }
 
     &__title {
@@ -66,6 +64,11 @@
           margin: 10rem 0 0 4rem;
         }
       }
+    }
+
+    &__repertoire {
+      grid-area: containerRepertoire;
+
     }
 
     &__cta {

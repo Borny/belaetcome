@@ -1,6 +1,7 @@
 // Tools
 @import './tools/variables.scss';
 @import './tools/mixins.scss';
+@import './tools/placeholder.scss';
 
 // Base
 @import './base/normalize.scss';
@@ -11,6 +12,7 @@
 @import './components/hero.scss';
 @import './components/compagnie.scss';
 @import './components/furiosa.scss';
+@import './components/repertoire.scss';
 @import './components/galerie.scss';
 @import './components/residence.scss';
 @import './components/contact.scss';

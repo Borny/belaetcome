@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +14,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <style>
-      .loader{
+      .loader {
         display: flex;
         flex-flow: column;
         position: fixed;
@@ -28,9 +29,11 @@
         opacity: 1;
         transition: 1s ease;
       }
-      .circular-loader{
+
+      .circular-loader {
         animation: rotate 2s infinite;
       }
+
       .loader-path {
         opacity: 1;
         stroke-dasharray: 125;
@@ -39,32 +42,38 @@
         transition: 1s ease;
         animation: dash 2s infinite;
       }
+
       @keyframes dash {
         0% {
           stroke-dashoffset: 125;
         }
+
         50% {
           stroke-dashoffset: 0;
         }
+
         100% {
           stroke-dashoffset: -125;
         }
       }
+
       @keyframes rotate {
         from {
           transform: rotate(0);
         }
-        
+
         to {
           transform: rotate(360deg);
         }
       }
     </style>
   </head>
+
   <body>
     <div id="loader" class="loader">
-      <svg class="circular-loader"viewBox="0 0 50 50" style="width: 100px;">
-        <circle class="loader-path" id="loader-path" cx="25" cy="25" r="20" fill="none" stroke="#5dbeba" stroke-width="2" />
+      <svg class="circular-loader" viewBox="0 0 50 50" style="width: 100px;">
+        <circle class="loader-path" id="loader-path" cx="25" cy="25" r="20" fill="none" stroke="#5dbeba"
+          stroke-width="2" />
       </svg>
     </div>
     <div class="backdrop" id="modal-backdrop"></div>
@@ -72,10 +81,9 @@
       <div class="modal__content">
         <div class="modal__header">
           <button type="button" id="close-modal-btn" class="btn__modal--close">
-            <svg viewbox="0 0 100 100" 
-            xmlns="http://www.w3.org/2000/svg" fill="transparent">
+            <svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="transparent">
               <line x1="0" y1="0" x2="100" y2="100" stroke="#444" stroke-width="10" />
-              <line x1="0" y1="100" x2="100" y2="0" stroke="#444" stroke-width="10"/>
+              <line x1="0" y1="100" x2="100" y2="0" stroke="#444" stroke-width="10" />
             </svg>
           </button>
         </div>
@@ -89,26 +97,26 @@
             La Clé du Quai – Le Tchaï à Bordeaux
           </strong>
         </p>
-          <p  class="font-color-primary">
-            9 au 12 Septembre 2019
-          </p>
-          <p class="font-color-primary">18 au 21 Novembre 2019</p>
-          <p>
-            <strong>            La Faktoria - Choreographic Center à Pampelune</strong>
-          </p>
-          <p class="font-color-primary">3 au 7 Février 2020</p>
-          <p>
-            <strong>            La Clé du Quai – Le Tchaï à Bordeaux</strong>
-          </p>
-          <p  class="font-color-primary">16 au 19 Mars 2020</p>
-          <p class="font-color-primary">20 au 24 Avril 2020</p>
-          <p>
-            <strong>            4 semaines de travail Lieux à définir </strong>
-          </p>
-          <p class="font-color-primary">
-            Mai 2020 à Février 2021
-          </p>
-          <br>
+        <p class="font-color-primary">
+          9 au 12 Septembre 2019
+        </p>
+        <p class="font-color-primary">18 au 21 Novembre 2019</p>
+        <p>
+          <strong> La Faktoria - Choreographic Center à Pampelune</strong>
+        </p>
+        <p class="font-color-primary">3 au 7 Février 2020</p>
+        <p>
+          <strong> La Clé du Quai – Le Tchaï à Bordeaux</strong>
+        </p>
+        <p class="font-color-primary">16 au 19 Mars 2020</p>
+        <p class="font-color-primary">20 au 24 Avril 2020</p>
+        <p>
+          <strong> 4 semaines de travail Lieux à définir </strong>
+        </p>
+        <p class="font-color-primary">
+          Mai 2020 à Février 2021
+        </p>
+        <br>
         <p>
           Résidences et actions de médiation en établissements scolaires bordelais.<br>
           Lycées Sainte Famille, Mirail et Montesquieu à confirmer.
@@ -126,11 +134,7 @@
       <div class="container">
         <div class="logo-container">
           <div class="logo-container__background"></div>
-          <img
-            alt="logo bela et come"
-            class="logo"
-            src="./images/logo-bela-come.svg"
-          />
+          <img alt="logo bela et come" class="logo" src="./images/logo-bela-come.svg" />
         </div>
         <!-- <div class="catch-phrase">
           <p>
@@ -189,18 +193,9 @@
           </ul>
           <div class="svg--container">
             <span></span>
-            <svg
-              class="svg--zigzag"
-              viewBox="0 0 100 15"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M 0,0 L 25,15 L 50,0 L 75,15 L 100,0"
-                stroke="white"
-                stroke-width="0.2"
-                stroke-linecap="round"
-                fill="transparent"
-              />
+            <svg class="svg--zigzag" viewBox="0 0 100 15" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 0,0 L 25,15 L 50,0 L 75,15 L 100,0" stroke="white" stroke-width="0.2" stroke-linecap="round"
+                fill="transparent" />
             </svg>
             <span></span>
           </div>
@@ -219,11 +214,7 @@
     <section id="compagnie" class="compagnie">
       <div class="container">
         <div class="container__image">
-          <img
-            alt="dessin bela et come"
-            src="./images/betcome-threshold.png"
-            class="image"
-          />
+          <img alt="dessin bela et come" src="./images/betcome-threshold.png" class="image" />
         </div>
         <div class="container__content">
           <h2 class="secondary-heading">la Compagnie</h2>
@@ -284,11 +275,7 @@
           <p>Prochaine création</p>
         </div>
         <div class="container__image">
-          <img
-            src="images/furiosa_dessin.png"
-            class="image"
-            alt="furiosa dessin"
-          />
+          <img src="images/furiosa_dessin.png" class="image" alt="furiosa dessin" />
         </div>
         <div class="container__content">
           <p class="content__quote">
@@ -341,6 +328,228 @@
             <a class="btn--base btn--color-secondary" target="_blank" href="./furiosa.pdf">
               Dossier artisitique complet
             </a>
+          </div>
+        </div>
+        <!-- REPERTOIRE -->
+        <div class="container__repertoire">
+          <h2 class="secondary-heading">Répertoire</h2>
+          <div class="repertoire__item close">
+            <div class="repertoire__item--heading">
+              <p>Et Rien Ne Bouge</p>
+              <div class="iconPlus">
+                <span class="plus"></span>
+                <span class="minus"></span>
+              </div>
+            </div>
+            <div class="repertoire__item--content">
+              <div class="repertoire__item--content--text">
+                <p>
+                  <strong>Pièce chorégraphique pour un public actif.</strong>
+                  <br>
+                  Les mouvements massifs de contestation sociale en France et dans le monde de ces dernières années
+                  nous poussent à nous emparer de cette dynamique pour questionner, à travers l’acte chorégraphique,
+                  ce qu’est le corps de la révolte : ses dynamiques, ses moteurs, ses enjeux et ses risques.
+                  <br>
+                  En trois étapes, nous proposons au public de <strong>questionner sa posture de spectateur</strong>,
+                  pour l’amener, par le biais de questions fortement ancrées dans les enjeux sociaux actuels, à
+                  <strong>se questionner personnellement sur les enjeux auxquels il est attaché</strong>, le
+                  conduisant enfin à <strong>se mettre en mouvement en collectivité</strong>.
+                </p>
+                <p>
+                  <strong>Performée à Bordeaux</strong>, au marché des Douves, dans le cadre de Dansons sur les
+                  Quais
+                  et lors du festival Le Bruit des Corps.
+                </p>
+                <p>
+                  <strong>Durée</strong> : 1 heure + temps convivial d’échange informel à la fin de la pièce.
+                  <br>
+                  <strong>Interprètes</strong> : Bela BALSA / Jérôme BATTEUX / Manon CAPRARO / Jean-François COFFIN /
+                  Laure DESPLAN / Alice LADA
+                  <br>
+                  <strong>Chorégraphie</strong> : Côme TANGUY<br>
+                  <strong>Aide à l'écriture chorégraphique </strong>: Bela BALSA</br>
+                  <strong>Aide à la création sonore</strong> : Mariele BARAZIOL<br>
+                  <strong>Textes</strong>: Jérôme BATTEUX – <a href="https://www.petitessecousses.fr/"
+                    target="blank">Cie des Petites Secousses</a><br>
+                  <strong>Soutiens</strong>: <a href="https://www.douves.org" target="blank">Marché des Douves</a>, <a
+                    href="https://www.dansonssurlesquais.fr/" target="_blank">Dansons sur les Quais</a>, Mairie de
+                  Bordeaux
+                </p>
+              </div>
+              <div class="repertoire__item--content--visual">
+                <div class="repertoire__item--content--video">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/k4CWc_fp3_U" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="repertoire__item close">
+            <div class="repertoire__item--heading">
+              <p>Entrez dans la danse</p>
+              <div class="iconPlus">
+                <span class="plus"></span>
+                <span class="minus"></span>
+              </div>
+            </div>
+            <div class="repertoire__item--content">
+              <div class="repertoire__item--content--text">
+                <p>
+                  <strong>Création à la demande du festival CHAHUTS pour l'édition 2018 et 2019</strong> qui prend la
+                  forme d'un Flash Mob dansé sur la place St MIchel, à Bordeaux, lors de la soirée d'inauguration.
+                </p>
+                <p>
+
+                  Edition 2018 - avec adultes usagers de la MDSI et differents partenaires du quartier St Michel.
+                </p>
+                <p>
+                  Edition 2019 - avec les enfants, élèves du CP au CM2 de l'école des Menuts.
+                </p>
+                <p>
+                  <strong>Durée</strong> : 10 minutes<br>
+                  <strong>Chorégraphie</strong> : Bela BALSA / Côme TANGUY<br>
+                  <strong>Partenariat</strong> : Chahuts
+                </p>
+              </div>
+              <div class="repertoire__item--content--visual">
+                <div class="repertoire__item--content--img">
+                  <img alt="entrez dans la danse" class="image" src="./images/entrez-dans-la-danse.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="repertoire__item close">
+            <div class="repertoire__item--heading">
+              <p>Jocaste</p>
+              <div class="iconPlus">
+                <span class="plus"></span>
+                <span class="minus"></span>
+              </div>
+            </div>
+            <div class="repertoire__item--content">
+              <div class="repertoire__item--content--text">
+                <p><strong>Duo autour du personnage de Jocaste, amante, mère et femme d' Oedipe.</strong></p>
+                <p>
+                  «J’ai aimé Œdipe bébé, Œdipe jeune homme, Œdipe époux et père, amant fougueux, Œdipe imparfait,
+                  colérique, orgueilleux, Œdipe penaud et erratique […]
+                  J’ai aimé mes cinq enfants, semblables et différents, débordants de vie : Ismène la douce, Antigone
+                  l’écorchée, Etéocle l’inquiet, Polynice le solaire, Œdipe le premier et dernier…»
+                </p>
+                <p>
+                  Performée à Bordeaux, dans le cadre de la 8ème édition du festival Soirées du cinéma russe. Performée
+                  au
+                  marché des Douves, au Performance, dans le cadre de Dansons sur les Quais et lors du festival Le Bruit
+                  des Corps.
+                </p>
+                <p>
+                  <strong>
+                    Durée
+                  </strong>
+                  : 20 minutes <br>
+                  <strong> Chorégraphie et interprétation</strong> : Bela BALSA / Côme TANGUY<br>
+                  <strong> Inspiré de </strong><em>Jocaste Reine</em>, de Nancy HUSTON<br>
+                  <strong> Soutien</strong> : <a href="https://www.douves.org" target="blank">Marché des Douves</a>, <a
+                    href="https://www.dansonssurlesquais.fr/" target="_blank">Dansons sur les Quais</a>, <a
+                    href="https://www.cie-revolution.com/le-performance/" target="_blank">Le Performance</a>
+                </p>
+              </div>
+              <div class="repertoire__item--content--visual">
+                <div class="repertoire__item--content--img">
+                  <img alt="Bela Jocaste" class="image" src="./images/bela-jocaste.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="repertoire__item close">
+            <div class="repertoire__item--heading">
+              <p>Mélodie des Corps</p>
+              <div class="iconPlus">
+                <span class="plus"></span>
+                <span class="minus"></span>
+              </div>
+            </div>
+            <div class="repertoire__item--content">
+              <div class="repertoire__item--content--text">
+                <p>Cette création mêle <strong>danse contemporaine et chant choral</strong> pour offrir une autre
+                  approche de la musicalité, qui puisse s’appuyer sur d’autres outils que le son : <strong>la vibration,
+                    le toucher, la vue, le mouvement</strong>.</p>
+                <p><strong>
+                    Création à l’initiative de la Halle des Douves</strong> pensée pour un public malentendant.
+                  Performée à Bordeaux au sein de la Halle, ce spectacle a réuni un public de 156 personnes.
+                  <br>
+                  Avec Marie Chavanel et les élèves Cantabile et Cham du Conservatoire de Bordeaux.
+                </p>
+                <p>
+                  <strong>
+                    Durée </strong>: 90 minutes<br>
+                  <strong>Interprètes</strong> : Bela BALSA / Charlotte MASSE / Manon CAPRARO / Mélissa MARTINEZ<br>
+                  <strong>Chorégraphie</strong> : Bela BALSA / Côme TANGUY<br>
+                  <strong>Création sonore</strong> : Mariele BARAZIOL<br>
+                  <strong>Réalisation graphique</strong> : Clara LANG<br>
+                  <strong>Partenariats</strong> : <a href="https://www.douves.org" target="blank">Marché des Douves</a>
+                  et <a href="http://www.bordeaux.fr/p63952/conservatoire-de-bordeaux" target="_blank"> Conservatoire de
+                    Bordeaux</a></p>
+              </div>
+              <div class="repertoire__item--content--visual">
+                <div class="repertoire__item--content--img">
+                  <img alt="melodie des corps" class="image" src="./images/melodie-des-corps.jpg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="repertoire__item close">
+            <div class="repertoire__item--heading">
+              <p>L'Antigone de Clios</p>
+              <div class="iconPlus">
+                <span class="plus"></span>
+                <span class="minus"></span>
+              </div>
+            </div>
+            <div class="repertoire__item--content">
+              <div class="repertoire__item--content--text">
+                <p>
+                  «Il n'a pas l'air méchant, mais il y a pourtant dans son regard quelque chose de sauvage et d'amer qui
+                  l'effraie et la subjugue. [...] Qu'il est beau avec ce front haut sur lequel retombe ses cheveux noirs
+                  et bouclés, sa bouche éclatante sous le jeu amer du sourire.» Antigone, H. Bauchau</p>
+                <p>
+                  <strong>Duo inspiré des personnages d'Antigone et de Clios</strong>, dans la version romancée d'Henri
+                  Bauchau. La rencontre de ces deux personnages, dans leur errance à travers la Grèce, les transforme
+                  l'un l'autre. Clios est un homme violent et impulsif qui trouvera par Antigone sa sérénité. Elle, tout
+                  en dévotion et abnégation, incarne pourtant avec puissance le combat pour autrui. Ces deux
+                  personnages, se retranscrivent ici pour construire des <strong>individus intemporels et
+                    présents</strong>, en accord avec la fonction même du mythe grec qui est de renvoyer à notre propre
+                  condition.
+                  <br>
+                  <strong>Le plateau est un espace noir et sans limites où la lumière travaille à effacer les frontières
+                    matérielles et créer les espaces vides</strong>. Le regard n'a comme point d'accroche que ces deux
+                  êtres qui y tracent leur chemin, deux personnages livrés à leur sort.
+                </p>
+                <p>
+                  <strong>Performée à Toulouse, Sens et Bordeaux</strong>, dans le cadre du Festival Ravensare, du
+                  Concours des Jeunes
+                  Chorégraphes Les Synodales 2016 – <strong>Lauréat Prix des Synodales</strong> et de Dansons sur les
+                  Quais.
+                </p>
+                <p>
+                  <strong>Durée</strong> : 20 minutes<br>
+                  <strong>Chorégraphie et interprétation</strong> : Bela BALSA / Côme TANGUY<br>
+                  <strong> Inspiré de</strong> Oedipe sur la route et Antigone, de Henri Bauchau<br>
+                  <strong> Soutien</strong> :
+                  <a href="https://www.laboiteajouer.com/" target="_blank">La Boite à
+                    Jouer</a>, <a href="https://www.cie-revolution.com/le-performance/" target="_blank">Le Performance</a>, <a
+                    href="https://www.dansonssurlesquais.fr/" target="_blank">Dansons sur les Quais</a>, <a
+                    href="https://www.facebook.com/synodales/" target="_blank">Les Synodales</a>,<a
+                    href="https://festivalravensare.com/" target="_blank">Festival Ravensare</a>
+                </p>
+              </div>
+              <div class="repertoire__item--content--visual">
+                <div class="repertoire__item--content--img">
+                  <img alt="melodie des corps" class="image" src="./images/clios.jpg" />
+                  <p class="img--credits">Crédits : Steve Laurens</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -422,9 +631,7 @@
       <div class="container">
         <div class="container__content">
           <p>
-            <strong
-              >La Compagnie Bela & Côme - L’association La Clé du Quai</strong
-            >
+            <strong>La Compagnie Bela & Côme - L’association La Clé du Quai</strong>
             propose des accueils en résidence pour les artistes et compagnies du
             spectacle vivant, et plus spécifiquement en danse contemporaine et
             en théâtre. Cet accueil en résidence s’adresse en priorité aux
@@ -441,7 +648,7 @@
             <li>
               - la prise en charge des repas du
               midi au sein du café Tchaï pour les artistes sur le temps de la
-              résidence 
+              résidence
             </li>
             <li>
               - la possibilité d’un accompagnement artistique avec les
@@ -464,23 +671,21 @@
           </p>
         </div>
         <div class="container__cta">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOg4O8bpbzMrm8lLOkDQqEu7qB6uuZRCSWGUk_0jj1-OkmXg/viewform" target="blank" class="btn--base btn--color-primary">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOg4O8bpbzMrm8lLOkDQqEu7qB6uuZRCSWGUk_0jj1-OkmXg/viewform"
+            target="blank" class="btn--base btn--color-primary">
             Déposer une candidature
-          </button>
-          <a href="http://www.lacleduquai.com/pages/le-tchai/#studio" target="blank" class="btn--base btn--color-primary">
-            Voir l'espace de travail
-          </button>
+            </button>
+            <a href="http://www.lacleduquai.com/pages/le-tchai/#studio" target="blank"
+              class="btn--base btn--color-primary">
+              Voir l'espace de travail
+              </button>
         </div>
       </div>
     </section>
     <section id="contact" class="contact">
       <div class="container">
         <div class="container__image">
-          <img
-            alt="main dessin"
-            class="image"
-            src="./images/hand-threshold-reverse.png"
-          />
+          <img alt="main dessin" class="image" src="./images/hand-threshold-reverse.png" />
         </div>
         <div class="container__form">
           <h2 class="secondary-heading">Contact</h2>
@@ -493,7 +698,9 @@
               <br>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
-                  <path id="ic_mail_outline_24px" d="M20,4H4A2,2,0,0,0,2.01,6L2,18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,20,4Zm0,14H4V8l8,5,8-5Zm-8-7L4,6H20Z" transform="translate(-2 -4)"/>
+                  <path id="ic_mail_outline_24px"
+                    d="M20,4H4A2,2,0,0,0,2.01,6L2,18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6A2.006,2.006,0,0,0,20,4Zm0,14H4V8l8,5,8-5Zm-8-7L4,6H20Z"
+                    transform="translate(-2 -4)" />
                 </svg>
               </span>
               Association La Clé du Quai<br>
@@ -505,10 +712,13 @@
             <p>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                  <path id="ic_call_24px" d="M6.62,10.79a15.149,15.149,0,0,0,6.59,6.59l2.2-2.2a.994.994,0,0,1,1.02-.24,11.407,11.407,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.25,1.02Z" transform="translate(-3 -3)"/>
-                </svg>                
+                  <path id="ic_call_24px"
+                    d="M6.62,10.79a15.149,15.149,0,0,0,6.59,6.59l2.2-2.2a.994.994,0,0,1,1.02-.24,11.407,11.407,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.25,1.02Z"
+                    transform="translate(-3 -3)" />
+                </svg>
               </span>
-              <a class="phone-number" href="tel:+33662126335">06 62 12 63 35</a>-<a class="phone-number" href="tel:+33650391216">06 50 39 12 14</a>
+              <a class="phone-number" href="tel:+33662126335">06 62 12 63 35</a>-<a class="phone-number"
+                href="tel:+33650391216">06 50 39 12 14</a>
             </p>
           </div>
           <form class="form hidden">
@@ -539,11 +749,7 @@
                 <span class="form__label--content">Message</span>
               </label>
             </div>
-            <button
-              type="button"
-              id="submit-contact-btn"
-              class="btn--plain"
-            >
+            <button type="button" id="submit-contact-btn" class="btn--plain">
               Envoyer
             </button>
           </form>
@@ -556,7 +762,9 @@
         Compagnie Bela&Côme | Association La Clé du Quai | 49 rue du Mirail,
         33000 Bordeaux
       </p>
-      <p class="hidden">cie.bela.come@gmail.com | <a href="tel:+33662126335">06 62 12 63 35</a> - <a href="tel:+33650391216">0650391216</a></p>
+      <p class="hidden">cie.bela.come@gmail.com | <a href="tel:+33662126335">06 62 12 63 35</a> - <a
+          href="tel:+33650391216">0650391216</a></p>
     </footer>
   </body>
+
 </html>

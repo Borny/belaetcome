@@ -4,6 +4,8 @@ const fs = require('fs');
 
 module.exports = {
   devServer: {
+    contentBase: './src',
+    watchContentBase: true,
     hot: true,
     http2: true,
     https: true,
