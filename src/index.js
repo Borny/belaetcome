@@ -2,23 +2,11 @@ import './styles/main.scss';
 import '../favicons/favicons';
 
 import { Collapse } from './js/repertoire';
+import Loader from './js/loader';
 
+// Collapse
 const collapse = new Collapse();
 collapse.collapsing();
-
-// VARIABLES
-const body = document.getElementsByTagName('body')[0];
-
-///////////
-// LOADER
-///////////
-window.onload = function () {
-  document.getElementById("loader").style.opacity = 0
-  document.getElementById('loader-path').style.opacity = 0;
-  setTimeout(() => {
-    document.getElementById("loader").style.display = "none"
-  }, 1000)
-}
 
 //////////////////////
 // MOBILE NAV TOGGLE
@@ -171,6 +159,8 @@ activateSliderControlBackground();
 // MODAL
 //////////
 
+// VARIABLES
+const body = document.getElementsByTagName('body')[0];
 const modalCalendar = document.getElementById('calendar-modal');
 const calendarModalBtnHandler = document.getElementById('show-calendar-btn');
 const closeModalBtn = document.getElementById('close-modal-btn');
