@@ -1,31 +1,17 @@
 import './styles/main.scss';
 import '../favicons/favicons';
 
+import { } from './js/loader';
 import { Collapse } from './js/repertoire';
-import Loader from './js/loader';
+import { MobileNav } from './js/mobile-nav';
 
 // Collapse
 const collapse = new Collapse();
 collapse.collapsing();
 
-//////////////////////
-// MOBILE NAV TOGGLE
-//////////////////////
-
-const mobileNav = document.getElementById('mobile-nav');
-const toggleNavBtn = document.getElementById('toggle-nav-btn');
-const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
-const mobileNavLinks = document.querySelectorAll('.menu__link');
-
-const toggleMobileNav = () => {
-  mobileNav.classList.toggle('open');
-}
-
-toggleNavBtn.addEventListener('click', toggleMobileNav);
-mobileNavOverlay.addEventListener('click', toggleMobileNav);
-mobileNavLinks.forEach(link => {
-  link.addEventListener('click', toggleMobileNav)
-})
+// Mobile Navigation
+const mobileNav = new MobileNav();
+mobileNav.clickActions();
 
 ////////////
 // GALLERY
