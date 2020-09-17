@@ -1,8 +1,5 @@
 export class CalendarModal {
 
-  constructor() {
-  }
-
   toggleModal() {
     const body = document.getElementsByTagName('body')[0];
     const modalBackdrop = document.getElementById('modal-backdrop');
