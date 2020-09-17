@@ -1,9 +1,10 @@
 import './styles/main.scss';
 import '../favicons/favicons';
 
-import { collapseFnc } from './js/repertoire';
+import { Collapse } from './js/repertoire';
 
-collapseFnc();
+const collapse = new Collapse();
+collapse.collapsing();
 
 // VARIABLES
 const body = document.getElementsByTagName('body')[0];
