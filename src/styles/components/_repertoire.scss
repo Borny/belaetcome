@@ -1,4 +1,6 @@
 .container__repertoire {
+  max-width: $screen-md;
+
   @include screen-sm {
     padding: 0 5rem;
   }
