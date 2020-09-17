@@ -4,6 +4,7 @@ import '../favicons/favicons';
 import { } from './js/loader';
 import { Collapse } from './js/repertoire';
 import { MobileNav } from './js/mobile-nav';
+import { CalendarModal } from './js/modal';
 
 // Collapse
 const collapse = new Collapse();
@@ -12,6 +13,10 @@ collapse.collapsing();
 // Mobile Navigation
 const mobileNav = new MobileNav();
 mobileNav.clickActions();
+
+// Modal 
+const calendarModal = new CalendarModal();
+calendarModal.initCalendarModalHandler();
 
 ////////////
 // GALLERY
@@ -145,20 +150,19 @@ activateSliderControlBackground();
 // MODAL
 //////////
 
-// VARIABLES
-const body = document.getElementsByTagName('body')[0];
-const modalCalendar = document.getElementById('calendar-modal');
-const calendarModalBtnHandler = document.getElementById('show-calendar-btn');
-const closeModalBtn = document.getElementById('close-modal-btn');
-const modalBackdrop = document.getElementById('modal-backdrop');
+// const body = document.getElementsByTagName('body')[0];
+// const modalCalendar = document.getElementById('calendar-modal');
+// const calendarModalBtnHandler = document.getElementById('show-calendar-btn');
+// const closeModalBtn = document.getElementById('close-modal-btn');
+// const modalBackdrop = document.getElementById('modal-backdrop');
 
-const calendarModalHandler = () => {
-  modalCalendar.classList.toggle('visible');
-  modalBackdrop.classList.toggle('visible');
-  body.classList.toggle('modal-open');
-}
+// const calendarModalHandler = () => {
+//   modalCalendar.classList.toggle('visible');
+//   modalBackdrop.classList.toggle('visible');
+//   body.classList.toggle('modal-open');
+// }
 
-calendarModalBtnHandler.addEventListener('click', calendarModalHandler);
-closeModalBtn.addEventListener('click', calendarModalHandler);
-modalBackdrop.addEventListener('click', calendarModalHandler);
+// calendarModalBtnHandler.addEventListener('click', calendarModalHandler);
+// closeModalBtn.addEventListener('click', calendarModalHandler);
+// modalBackdrop.addEventListener('click', calendarModalHandler);
 
