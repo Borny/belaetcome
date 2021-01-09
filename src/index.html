@@ -70,13 +70,19 @@
   </head>
 
   <body>
+
+    <!-- Loader -->
     <div id="loader" class="loader">
       <svg class="circular-loader" viewBox="0 0 50 50" style="width: 100px;">
         <circle class="loader-path" id="loader-path" cx="25" cy="25" r="20" fill="none" stroke="#5dbeba"
           stroke-width="2" />
       </svg>
     </div>
+
+    <!-- Modal backdrop -->
     <div class="backdrop" id="modal-backdrop"></div>
+
+    <!-- Modal -->
     <div class="modal calendar" id="calendar-modal">
       <div class="modal__content">
         <div class="modal__header">
@@ -130,6 +136,8 @@
         </p>
       </div>
     </div>
+
+    <!-- HERO SECTION -->
     <section id="hero" class="hero">
       <div class="container">
         <div class="logo-container">
@@ -144,6 +152,8 @@
             Une parole en mouvement.
           </p>
         </div> -->
+
+        <!-- Mobile only -->
         <div class="btn--container desktop--hidden">
           <a href="#furiosa" class="btn--base btn--color-primary">
             <strong>Furiosa</strong> <br />
@@ -267,6 +277,8 @@
         </div>
       </div>
     </section>
+
+    <!-- FURIOSA SECTION -->
     <section id="furiosa" class="furiosa">
       <div class="furiosa--bg"></div>
       <div class="container">
@@ -567,6 +579,8 @@
         </div>
       </div>
     </section>
+
+    <!-- GALLERY SECTION -->
     <section id="gallery" class="gallery">
       <div class="container">
         <h2 class="secondary-heading">Galerie</h2>
@@ -638,6 +652,8 @@
         </div>
       </div>
     </section>
+
+    <!-- RESIDENCE SECTION -->
     <section id="residence" class="residence">
       <div class="residence--bg"></div>
       <h2 class="secondary-heading">Accueil en résidence</h2>
@@ -695,6 +711,8 @@
         </div>
       </div>
     </section>
+
+    <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
       <div class="container">
         <div class="container__image">
@@ -734,43 +752,74 @@
                 href="tel:+33650391216">06 50 39 12 14</a>
             </p>
           </div>
-          <form class="form hidden">
-            <div class="form__group form--text">
-              <input class="form__control" type="text" />
-              <label class="form__label">
-                <span class="form__label--content">Name</span>
-              </label>
+          <div class="form-wrapper">
+            <div id="loader-contact" class="loader-contact hidden">
+              <svg class="circular-loader" viewBox="0 0 50 50" style="width: 100px;">
+                <circle class="loader-path" id="loader-path" cx="25" cy="25" r="20" fill="none" stroke="#5dbeba"
+                  stroke-width="2" />
+              </svg>
             </div>
 
-            <div class="form__group form--text">
-              <input class="form__control" type="text" />
-              <label class="form__label">
-                <span class="form__label--content">Email</span>
-              </label>
-            </div>
+            <!-- CONTACT FORM  MESSAGES-->
+            <p class="message success hidden" id="success-message">Votre message a bien été envoyé, merci!</p>
+            <p class="message error hidden" id="error-message">Une erreur s'est produite, veuillez réessayer.</p>
 
-            <div class="form__group form--text">
-              <input class="form__control" type="text " />
-              <label class="form__label">
-                <span class="form__label--content">Object</span>
-              </label>
-            </div>
+            <!-- CONTACT FORM -->
+            <form class="form" id="contact-form" novalidate>
+              <div class="form__group-wrapper">
+                <div class="form__group form--text">
+                  <input id="form-name" class="form__control" type="text" required minlength="3" />
+                  <label class="form__label">
+                    <span class="form__label--content">Nom<span class="font-color-primary"> *</span></span>
+                  </label>
+                </div>
+                <p class="form__error invisible">Veuillez renseigner votre nom</p>
+              </div>
 
-            <div class="form__group form--textarea">
-              <textarea class="form__control"></textarea>
-              <label class="form__label">
-                <span class="form__label--content">Message</span>
-              </label>
-            </div>
-            <button type="button" id="submit-contact-btn" class="btn--plain">
-              Envoyer
-            </button>
-          </form>
+              <div class="form__group-wrapper">
+                <div class="form__group form--text">
+                  <input id="form-email" class="form__control" type="email" required />
+                  <label class="form__label">
+                    <span class="form__label--content">Email<span class="font-color-primary"> *</span></span>
+                  </label>
+                </div>
+                <p class="form__error invisible">Veuillez renseigner votre email</p>
+              </div>
+
+              <div class="form__group-wrapper">
+                <div class="form__group form--text">
+                  <input id="form-object" class="form__control" type="text" required />
+                  <label class="form__label">
+                    <span class="form__label--content">Sujet<span class="font-color-primary"> *</span></span>
+                  </label>
+                </div>
+                <p class="form__error invisible">Veuillez renseigner le sujet du message</p>
+              </div>
+
+              <div class="form__group-wrapper">
+                <div class="form__group form--textarea">
+                  <textarea id="form-message" class="form__control" required minlength="3"></textarea>
+                  <label class="form__label">
+                    <span class="form__label--content">Message<span class="font-color-primary"> *</span></span>
+                  </label>
+                </div>
+                <p class="form__error invisible">Veuillez décrire votre demande</p>
+              </div>
+
+              <button type="submit" id="submit-contact-btn" class="btn btn--plain" disabled>
+                Envoyer
+              </button>
+            </form>
+          </div>
+
+
         </div>
       </div>
     </section>
+
+    <!-- FOOTER SECTION -->
     <footer id="footer" class="footer">
-      <p>Copyright © 2020 | belaetcome</p>
+      <p>Copyright © 2021 | belaetcome</p>
       <p class="hidden">
         Compagnie Bela&Côme | Association La Clé du Quai | 49 rue du Mirail,
         33000 Bordeaux

@@ -1,0 +1,52 @@
+.loader-contact {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
+  opacity: 1;
+  transition: 1s ease;
+
+  .circular-loader {
+    animation: rotate 2s infinite;
+  }
+
+  .loader-path {
+    opacity: 1;
+    stroke-dasharray: 125;
+    stroke-dashoffset: 125;
+    stroke-linecap: round;
+    transition: 1s ease;
+    animation: dash 2s infinite;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 125;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -125;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -42,15 +42,14 @@
     }
   }
 
-  &--disabled {
-    cursor: not-allowed;
-    background: $gray-light;
-    opacity: 0.6;
-    border: 1px solid $gray-light;
+  &--disabled,
+  &:disabled {
+    cursor: auto;
+    opacity: 0.3;
 
     &:hover {
       color: $white;
-      background: $gray-light;
+      background: $primary-color;
     }
   }
 }
@@ -63,6 +62,6 @@
   transition: 0.2s ease-out;
 
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
 }

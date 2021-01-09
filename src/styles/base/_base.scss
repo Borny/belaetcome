@@ -26,7 +26,6 @@ body {
   }
 
   @include screen-sm {
-
     p,
     li {
       font-size: 0.9rem;
@@ -107,6 +106,10 @@ textarea {
   @include screen-sm {
     display: none !important;
   }
+}
+
+.invisible {
+  visibility: hidden !important;
 }
 
 .font-color-primary {

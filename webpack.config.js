@@ -14,32 +14,32 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.html$/,
-        use: [{
-          loader: 'html-loader',
-          options: {
-            minimize: true
-          }
-        }]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
-      },
-      {
-        test: /\.(svg|png|jpe?g|gif|otf|pdf)$/i,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            esModule: false,
-          }
-        }]
-      },
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
+      test: /\.html$/,
+      use: [{
+        loader: 'html-loader',
+        options: {
+          minimize: true
+        }
+      }]
+    },
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: ['babel-loader']
+    },
+    {
+      test: /\.(svg|png|jpe?g|gif|otf|pdf)$/i,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          esModule: false,
+        }
+      }]
+    },
+    {
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader']
+    }
     ]
   },
   plugins: [

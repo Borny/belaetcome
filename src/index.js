@@ -6,6 +6,7 @@ import { Collapse } from './js/repertoire';
 import { MobileNav } from './js/mobile-nav';
 import { CalendarModal } from './js/modal';
 import { GalleryMobile } from './js/gallery';
+import { ContactForm } from './js/contact-form';
 
 // Collapse
 const collapse = new Collapse();
@@ -22,6 +23,10 @@ calendarModal.initCalendarModalHandler();
 // Gallery
 const gallery = new GalleryMobile();
 gallery.init();
+
+// Contact form
+const contactForm = new ContactForm();
+contactForm.init();
 
 /////////
 // FORM

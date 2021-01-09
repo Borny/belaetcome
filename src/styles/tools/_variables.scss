@@ -19,16 +19,17 @@ $primary-color: $fountain-blue;
 $secondary-color: $school-bus-yellow;
 $tertiary-color: $tundora;
 $gray-light: $dove-gray;
-$gray-dark:$mine-shaft;
+$gray-dark: $mine-shaft;
 $font-color: $gray-dark;
+
+$warning: $red;
 
 //////////
 // FONTS
 //////////
 
 // Roboto
-$fontRoboto: 'Roboto',
-sans-serif;
+$fontRoboto: 'Roboto', sans-serif;
 
 // Source Code
 $sourceCode-path: '../assets/fonts/source-code-pro/SourceCodePro-Medium.otf';
