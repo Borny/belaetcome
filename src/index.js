@@ -2,11 +2,21 @@ import './styles/main.scss';
 import '../favicons/favicons';
 
 import { } from './js/loader';
+import { Company } from './js/company';
+import { Furiosa } from './js/furiosa';
 import { Collapse } from './js/repertoire';
 import { MobileNav } from './js/mobile-nav';
 import { CalendarModal } from './js/modal';
 import { GalleryMobile } from './js/gallery';
 import { ContactForm } from './js/contact-form';
+
+// Company
+const company = new Company();
+company.animateImage();
+
+// Furiosa
+const furiosa = new Furiosa();
+furiosa.animateImage();
 
 // Collapse
 const collapse = new Collapse();
@@ -23,10 +33,12 @@ calendarModal.initCalendarModalHandler();
 // Gallery
 const gallery = new GalleryMobile();
 gallery.init();
+gallery.animateImage();
 
 // Contact form
 const contactForm = new ContactForm();
 contactForm.init();
+contactForm.animateImage();
 
 /////////
 // FORM

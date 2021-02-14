@@ -1,16 +1,34 @@
 export class GalleryMobile {
 
+  constructor() {
+    this.galleryContainer = document.getElementById('gallery-container');
+  }
+
+  animateImage() {
+    const triggerBottom = window.innerHeight / 2;
+
+    window.addEventListener('scroll', (e) => {
+      const galleryContainerTop = this.galleryContainer.getBoundingClientRect().top;
+
+      if (galleryContainerTop < triggerBottom) {
+        this.galleryContainer.classList.add('show');
+      } else {
+        this.galleryContainer.classList.remove('show');
+        this.galleryContainer.classList.remove('smooth');
+      }
+    });
+  }
+
   init() {
 
-    const galleryContainer = document.getElementById('gallery-container');
     const images = document.querySelectorAll('.image--item');
-    const imagesNumber = galleryContainer.children.length;
+    const imagesNumber = this.galleryContainer.children.length;
     const sliderControlsContainer = document.getElementById('slider--controls');
 
     let x0 = null;
     let imageIndex = 0;
 
-    galleryContainer.style.setProperty('--n', imagesNumber);
+    this.galleryContainer.style.setProperty('--n', imagesNumber);
 
     const activateSliderControlBackground = () => {
       const sliderControls = document.querySelectorAll('.slider--control');
@@ -33,14 +51,14 @@ export class GalleryMobile {
     const lock = (e) => {
       x0 = unify(e).clientX;
 
-      galleryContainer.classList.toggle('smooth', !(locked = true))
+      this.galleryContainer.classList.toggle('smooth', !(locked = true))
     };
 
     const drag = (e) => {
       e.preventDefault();
 
       if (locked)
-        galleryContainer.style.setProperty('--tx', `${Math.round(unify(e).clientX - x0)}px`)
+        this.galleryContainer.style.setProperty('--tx', `${Math.round(unify(e).clientX - x0)}px`)
     };
 
     let w;
@@ -56,13 +74,13 @@ export class GalleryMobile {
           f = +(s * dx / w).toFixed(2);
 
         if ((imageIndex > 0 || s < 0) && (imageIndex < imagesNumber - 1 || s > 0) && f > .2) {
-          galleryContainer.style.setProperty('--i', imageIndex -= s);
+          this.galleryContainer.style.setProperty('--i', imageIndex -= s);
           f = 1 - f;
         }
 
-        galleryContainer.style.setProperty('--tx', '0px');
-        galleryContainer.style.setProperty('--f', f);
-        galleryContainer.classList.toggle('smooth', !(locked = false));
+        this.galleryContainer.style.setProperty('--tx', '0px');
+        this.galleryContainer.style.setProperty('--f', f);
+        this.galleryContainer.classList.toggle('smooth', !(locked = false));
         x0 = null
       }
       activateSliderControlBackground();
@@ -79,12 +97,12 @@ export class GalleryMobile {
       sliderControlsContainer.appendChild(sliderControlElement);
     })
 
-    galleryContainer.addEventListener('mousedown', lock, false);
-    galleryContainer.addEventListener('touchstart', lock, false);
-    galleryContainer.addEventListener('mouseup', move, false);
-    galleryContainer.addEventListener('touchend', move, false);
-    galleryContainer.addEventListener('mousemove', drag, false);
-    galleryContainer.addEventListener('touchmove', drag, false);
+    this.galleryContainer.addEventListener('mousedown', lock, false);
+    this.galleryContainer.addEventListener('touchstart', lock, false);
+    this.galleryContainer.addEventListener('mouseup', move, false);
+    this.galleryContainer.addEventListener('touchend', move, false);
+    this.galleryContainer.addEventListener('mousemove', drag, false);
+    this.galleryContainer.addEventListener('touchmove', drag, false);
 
     activateSliderControlBackground();
 

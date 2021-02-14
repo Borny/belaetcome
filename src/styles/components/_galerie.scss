@@ -1,6 +1,5 @@
 .gallery {
   .container {
-
     .secondary-heading {
       padding: 3rem 0 2rem 1rem;
 
@@ -23,17 +22,24 @@
 
     .image--list {
       display: flex;
+      flex-direction: row-reverse;
       align-items: center;
       overflow-y: hidden;
       height: 100vw;
       max-height: 100vh;
       --n: 1;
       width: 100%;
-      width: calc(var(--n)*100%);
-      transform: translate(calc(var(--i, 0)/var(--n)*-100% + var(--tx, 0px)));
+      width: calc(var(--n) * 100%);
+      transform: translate(calc(var(--i, 0) / var(--n) * -100% + var(--tx, 0px)));
+      opacity: 0;
+      transition: 0.4s ease;
+
+      &.show {
+        opacity: 1;
+      }
 
       &.smooth {
-        transition: transform calc(var(--f, 1)*.5s) ease-out;
+        transition: transform calc(var(--f, 1) * 0.5s) ease-out;
       }
 
       @include screen-sm {
@@ -64,9 +70,9 @@
 
       @include screen-sm {
         transform: rotate(45deg) translateY(10px);
-        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.7);
+        box-shadow: 20px 40px 19px rgba(157, 157, 157, 0.7);
         position: relative;
-        transition: .2s ease-out;
+        transition: 0.2s ease-out;
         pointer-events: initial;
 
         &:not(:last-child) {
@@ -79,68 +85,67 @@
           height: 250px;
           z-index: 4;
 
-          ~.image--item {
+          ~ .image--item {
             width: 200px;
             height: 200px;
           }
         }
       }
 
-      &--1 {
-        order: 1;
-      }
+      // &--1 {
+      //   order: 1;
+      // }
 
-      &--2 {
-        order: 2;
-      }
+      // &--2 {
+      //   order: 2;
+      // }
 
-      &--3 {
-        order: 3;
-      }
+      // &--3 {
+      //   order: 3;
+      // }
 
-      &--4 {
-        order: 4;
-      }
+      // &--4 {
+      //   order: 4;
+      // }
 
-      &--5 {
-        order: 5;
-      }
+      // &--5 {
+      //   order: 5;
+      // }
 
-      &--6 {
-        order: 6;
-      }
+      // &--6 {
+      //   order: 6;
+      // }
 
-      &--7 {
-        order: 7;
-      }
+      // &--7 {
+      //   order: 7;
+      // }
 
-      &--8 {
-        order: 8;
-      }
+      // &--8 {
+      //   order: 8;
+      // }
 
-      &--9 {
-        order: 9;
-      }
+      // &--9 {
+      //   order: 9;
+      // }
 
-      &--10 {
-        order: 10;
-      }
+      // &--10 {
+      //   order: 10;
+      // }
 
-      &--11 {
-        order: 11;
-      }
+      // &--11 {
+      //   order: 11;
+      // }
 
-      &--12 {
-        order: 12;
-      }
+      // &--12 {
+      //   order: 12;
+      // }
 
-      &--13 {
-        order: 13;
-      }
+      // &--13 {
+      //   order: 13;
+      // }
     }
 
     .image--item__container {
-
       @include screen-sm {
         width: 355px;
         height: 355px;
@@ -173,10 +178,9 @@
         transition: 0.2s ease;
 
         &.active {
-          background: $primary-color
+          background: $primary-color;
         }
       }
     }
-
   }
 }

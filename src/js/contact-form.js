@@ -12,6 +12,20 @@ export class ContactForm {
     this.errorMessage = document.getElementById('error-message');
     this.submitContactBtn = document.getElementById('submit-contact-btn');
     this.loaderContact = document.getElementById('loader-contact');
+    this.img = document.getElementById('hand-img');
+  }
+
+  animateImage() {
+    const triggerBottom = window.innerHeight / 2;
+
+    window.addEventListener('scroll', (e) => {
+      const imgTop = this.img.getBoundingClientRect().top;
+      if (imgTop < triggerBottom) {
+        this.img.classList.add('show');
+      } else {
+        this.img.classList.remove('show');
+      }
+    });
   }
 
   isFormValid() {

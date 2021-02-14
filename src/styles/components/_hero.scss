@@ -34,6 +34,7 @@
     -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
     clip-path: polygon(100% 0, 0 0, 50% 100%);
     background: $white;
+    animation: logoIn 1s ease-out;
   }
 
   .logo {
@@ -41,18 +42,15 @@
     position: relative;
     z-index: 2;
     margin: 2rem 0 2rem 1.5rem;
+    animation: logoIn 1.5s ease-in;
   }
 
-  .btn--container {
-    display: flex;
-    flex-flow: column;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-
-    .btn--base {
-      min-width: 170px;
-      margin: 0.7rem;
+  @keyframes logoIn {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 
@@ -75,6 +73,19 @@
   // }
 
   // MENU MOBILE
+
+  .btn--container {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    .btn--base {
+      min-width: 170px;
+      margin: 0.7rem;
+    }
+  }
 
   .menu--mobile {
     &.open {
@@ -203,6 +214,17 @@
     padding: 1rem;
     flex-flow: column;
     justify-content: center;
+
+    // animation: navIn 3s ease-in;
+
+    // @keyframes navIn {
+    //   0% {
+    //     opacity: 0;
+    //   }
+    //   100% {
+    //     opacity: 1;
+    //   }
+    // }
 
     .svg--container {
       display: flex;

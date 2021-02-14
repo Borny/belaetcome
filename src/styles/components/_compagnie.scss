@@ -1,5 +1,4 @@
 .compagnie {
-
   .container {
     display: flex;
     flex-flow: column;
@@ -16,6 +15,14 @@
 
       .image {
         width: 100%;
+        transform: translateX(-40%);
+        transition: 0.4s ease-in;
+        opacity: 0;
+
+        &.show {
+          transform: translateX(0);
+          opacity: 1;
+        }
       }
     }
 
