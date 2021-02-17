@@ -102,7 +102,7 @@ export class ContactForm {
     // Goes through the array inputFields
     this.inputFields.forEach(input => {
       // Creates an event listener on the current input_field
-      console.log('this:', this);
+      // console.log('this:', this);
       input.addEventListener('input', this.focusOnInput.bind(this));
     })
 

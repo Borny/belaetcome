@@ -9,6 +9,7 @@ $red: #ff0000;
 $mine-shaft: #242424;
 $tundora: #444;
 $dove-gray: #707070;
+$mercury: #eee;
 
 $fountain-blue: #5dbeba;
 
@@ -20,6 +21,7 @@ $primary-color: $fountain-blue;
 $secondary-color: $school-bus-yellow;
 $tertiary-color: $tundora;
 $gray-light: $dove-gray;
+$gray-lighter: $mercury;
 $gray-dark: $mine-shaft;
 $font-color: $gray-dark;
 
@@ -59,6 +61,7 @@ $fontWeightBolder: 700;
 // Z-INDEX
 
 /////////////////
+$zindex-img-carousel: 30;
 $zindex-contact-section: 50;
 $zindex-residence-section: 60;
 $zindex-mobile-nav-overlay: 400;

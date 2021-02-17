@@ -14,6 +14,7 @@
     padding: 0 0 6rem;
 
     @include screen-sm {
+      display: none;
       max-width: $screen-md;
       margin: 0 auto;
       overflow-x: initial;
@@ -91,95 +92,141 @@
           }
         }
       }
-
-      // &--1 {
-      //   order: 1;
-      // }
-
-      // &--2 {
-      //   order: 2;
-      // }
-
-      // &--3 {
-      //   order: 3;
-      // }
-
-      // &--4 {
-      //   order: 4;
-      // }
-
-      // &--5 {
-      //   order: 5;
-      // }
-
-      // &--6 {
-      //   order: 6;
-      // }
-
-      // &--7 {
-      //   order: 7;
-      // }
-
-      // &--8 {
-      //   order: 8;
-      // }
-
-      // &--9 {
-      //   order: 9;
-      // }
-
-      // &--10 {
-      //   order: 10;
-      // }
-
-      // &--11 {
-      //   order: 11;
-      // }
-
-      // &--12 {
-      //   order: 12;
-      // }
-
-      // &--13 {
-      //   order: 13;
-      // }
-    }
-
-    .image--item__container {
-      @include screen-sm {
-        width: 355px;
-        height: 355px;
-        transform: rotate(-45deg) translateY(-74px);
-      }
     }
 
     .image {
       height: 100vw;
-
-      @include screen-sm {
-        width: 100%;
-        height: auto;
-      }
     }
 
     // Controls
-    .slider--controls {
+    // .slider--controls {
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+
+    //   .slider--control {
+    //     width: 10px;
+    //     height: 10px;
+    //     background: transparent;
+    //     border: 1px solid $primary-color;
+    //     border-radius: 10px;
+    //     margin: 0.5rem;
+    //     transition: 0.2s ease;
+
+    //     &.active {
+    //       background: $primary-color;
+    //     }
+    //   }
+    // }
+  }
+
+  // DESKTOP CAROUSEL
+  .carousel--desktop__container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  .btn-carousel {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: $white;
+    color: $primary-color;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 10px 5px $gray-lighter;
+    }
+    &:active {
+      &.btn-carousel--left {
+        transform: scale(0.95) translateX(-155%);
+      }
+
+      &.btn-carousel--right {
+        transform: scale(0.95) translateX(155%);
+      }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: default;
+      box-shadow: none;
+      &.btn-carousel--left {
+        transform: translateX(-155%);
+      }
+      &.btn-carousel--right {
+        transform: translateX(155%);
+      }
+    }
+  }
+
+  .btn-carousel--left {
+    transform: translateX(-150%);
+  }
+
+  .btn-carousel--right {
+    transform: translateX(150%);
+  }
+
+  .carousel--desktop {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    width: calc(100vw - 30%);
+    margin: auto;
+
+    .carousel__gallery {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      min-height: 700px;
+      transition: 0.4s ease-in-out;
+      flex-direction: row-reverse;
+      margin-top: -3rem;
+    }
 
-      .slider--control {
-        width: 10px;
-        height: 10px;
-        background: transparent;
-        border: 1px solid $primary-color;
-        border-radius: 10px;
-        margin: 0.5rem;
-        transition: 0.2s ease;
+    .gallery__item {
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      transform: rotate(45deg) translateY(10px);
+      box-shadow: 20px 40px 19px rgba(157, 157, 157, 0.7);
+      position: relative;
+      transition: 0.4s ease-out;
+      pointer-events: initial;
 
-        &.active {
-          background: $primary-color;
-        }
+      &.hightlight {
+        z-index: $zindex-img-carousel;
+        transform: scale(1.7) rotate(45deg) translateY(10px);
+      }
+      &.hide {
+        opacity: 0;
+      }
+    }
+    .gallery__item__container {
+      width: 355px;
+      height: 355px;
+      transform: rotate(-45deg) translateY(-74px);
+      .img {
+        width: 100%;
+        height: auto;
       }
     }
   }

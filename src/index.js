@@ -34,6 +34,7 @@ calendarModal.initCalendarModalHandler();
 const gallery = new GalleryMobile();
 gallery.init();
 gallery.animateImage();
+gallery.initCarousel();
 
 // Contact form
 const contactForm = new ContactForm();
