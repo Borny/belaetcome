@@ -6,7 +6,7 @@ export class ContactForm {
     this.inputFields = document.querySelectorAll('.form__control');
     this.name = this.form.querySelector('#form-name');
     this.email = this.form.querySelector('#form-email');
-    this.object = this.form.querySelector('#form-object');
+    this.subject = this.form.querySelector('#form-subject');
     this.message = this.form.querySelector('#form-message');
     this.successMessage = document.getElementById('success-message');
     this.errorMessage = document.getElementById('error-message');
@@ -31,7 +31,7 @@ export class ContactForm {
   isFormValid() {
     return this.name.validity.valid
       && this.email.validity.valid
-      && this.object.validity.valid
+      && this.subject.validity.valid
       && this.message.validity.valid
   }
 
@@ -46,8 +46,8 @@ export class ContactForm {
     event.preventDefault(); // will prevent the page from reload on form submit 
     const formData = {
       name: this.name.value,
-      email: this.email.value,
-      object: this.object.value,
+      email: this.email.value.trim(),
+      subject: this.subject.value,
       message: this.message.value
     };
 
@@ -68,8 +68,16 @@ export class ContactForm {
         this.loaderContact.classList.add('hidden');
         this.form.classList.add('hidden');
         this.successMessage.classList.remove('hidden');
+      } else {
+
+        console.log('error:', res.status, res);
+        // this.form.classList.remove('hidden');
+        this.errorMessage.classList.remove('hidden');
+        this.loaderContact.classList.add('hidden');
+        throw new Error('Something went wrong')
       }
     } catch (error) {
+      console.log('contact error:', error)
       this.form.classList.remove('hidden');
       this.errorMessage.classList.remove('hidden');
       this.loaderContact.classList.add('hidden');
