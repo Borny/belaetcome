@@ -56,7 +56,8 @@ export class ContactForm {
 
     try {
       const res = await fetch(
-        'http://localhost:9000/api/contact',
+        'https://belaetcome.herokuapp.com/api/contact',
+        // 'http://localhost:9000/api/contact',
         // 'http://localhost:9000/api/contactffff',
         {
           method: 'POST',
