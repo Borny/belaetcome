@@ -9,8 +9,8 @@ module.exports = {
     hot: true,
     http2: true,
     https: true,
-    key: fs.readFileSync('./ssl/server.key'),
-    cert: fs.readFileSync('./ssl/server.crt'),
+    // key: fs.readFileSync('./ssl/server.key'),
+    // cert: fs.readFileSync('./ssl/server.crt'),
   },
   module: {
     rules: [{
