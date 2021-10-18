@@ -1,55 +1,46 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const fs = require('fs');
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
+  mode: 'development',
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
   devServer: {
-    contentBase: './src',
-    watchContentBase: true,
+    static: './src',
     hot: true,
-    http2: true,
-    https: true,
-    // key: fs.readFileSync('./ssl/server.key'),
-    // cert: fs.readFileSync('./ssl/server.crt'),
+    port: 5678
   },
   module: {
-    rules: [{
-      test: /\.html$/,
-      use: [{
-        loader: 'html-loader',
-        options: {
-          minimize: true
-        }
-      }]
-    },
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: ['babel-loader']
-    },
-    {
-      test: /\.(svg|png|jpe?g|gif|otf|pdf)$/i,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          esModule: false,
-        }
-      }]
-    },
-    {
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader']
-    }
-    ]
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
+      // will load the images
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      // will load the fonts
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+    ],
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      filename: './index.html'
+    new HtmlWebpackPlugin({
+      filename: 'src/idnex.html'
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    })
-  ]
+  ],
 };

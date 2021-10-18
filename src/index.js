@@ -1,5 +1,5 @@
 import './styles/main.scss';
-import '../favicons/favicons';
+// import '../favicons/favicons';
 
 import { } from './js/loader';
 import { Company } from './js/company';
