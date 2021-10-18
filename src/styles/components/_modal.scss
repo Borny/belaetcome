@@ -21,13 +21,13 @@
   max-width: 600px;
   background: $white;
   border-radius: 4px;
-  top: 10vh;
+  top: -10%;
   left: 50%;
   transform: translateX(-50%);
 
   &.visible {
     display: block;
-    animation: fade-slide-in 0.3s ease-out forwards;
+    animation: fade-slide-in 0.4s ease-out forwards;
   }
 
   &__content {
@@ -47,12 +47,11 @@
 
 @keyframes fade-slide-in {
   0% {
-    top: 0;
+    top: -10%;
     opacity: 0;
   }
 
   50% {
-    top: 5vh;
     opacity: .7;
   }
 
