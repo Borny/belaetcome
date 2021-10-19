@@ -1,17 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
 module.exports = {
-  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-  },
-  devServer: {
-    static: './src',
-    hot: true,
-    port: 5678
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
   module: {
     rules: [
@@ -19,17 +16,22 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          "style-loader",
+          'style-loader',
           // Translates CSS into CommonJS
-          "css-loader",
+          'css-loader',
           // Compiles Sass to CSS
-          "sass-loader",
+          'sass-loader',
         ],
       },
       // will load the images
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      // will load the html (including images)
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
       // will load the fonts
       {
@@ -40,7 +42,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'src/idnex.html'
+      filename: 'index.html',
+      inject: true,
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
+    new FaviconsWebpackPlugin('src/images/favicon.svg'),
   ],
 };

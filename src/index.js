@@ -1,7 +1,6 @@
 import './styles/main.scss';
-// import '../favicons/favicons';
 
-import { } from './js/loader';
+import {} from './js/loader';
 import { Company } from './js/company';
 import { Furiosa } from './js/furiosa';
 import { Collapse } from './js/repertoire';
@@ -26,7 +25,7 @@ collapse.collapsing();
 const mobileNav = new MobileNav();
 mobileNav.clickActions();
 
-// Modal 
+// Modal
 const calendarModal = new CalendarModal();
 calendarModal.initCalendarModalHandler();
 
