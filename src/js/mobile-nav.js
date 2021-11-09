@@ -1,5 +1,7 @@
 export class MobileNav {
-  constructor() { }
+  constructor() {
+    this.clickActions();
+  }
 
   toggleNav() {
     const mobileNav = document.getElementById('mobile-nav');
@@ -13,8 +15,8 @@ export class MobileNav {
 
     toggleNavBtn.addEventListener('click', this.toggleNav);
     mobileNavOverlay.addEventListener('click', this.toggleNav);
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', this.toggleNav)
-    })
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', this.toggleNav);
+    });
   }
 }

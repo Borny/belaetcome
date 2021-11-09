@@ -1,6 +1,7 @@
 export class Furiosa {
   constructor() {
     this.img = document.getElementById('furiosa-img');
+    this.animateImage();
   }
 
   animateImage() {

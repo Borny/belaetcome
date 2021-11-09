@@ -1,4 +1,7 @@
 export class CalendarModal {
+  constructor() {
+    this.initCalendarModalHandler();
+  }
 
   toggleModal() {
     const body = document.getElementsByTagName('body')[0];
@@ -18,5 +21,4 @@ export class CalendarModal {
     closeModalBtn.addEventListener('click', this.toggleModal);
     modalBackdrop.addEventListener('click', this.toggleModal);
   }
-
 }

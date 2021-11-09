@@ -1,7 +1,6 @@
 export class ContactForm {
-
   constructor() {
-    this.btn = document.getElementById('submit-contact-btn')
+    this.btn = document.getElementById('submit-contact-btn');
     this.form = document.getElementById('contact-form');
     this.inputFields = document.querySelectorAll('.form__control');
     this.name = this.form.querySelector('#form-name');
@@ -13,6 +12,9 @@ export class ContactForm {
     this.submitContactBtn = document.getElementById('submit-contact-btn');
     this.loaderContact = document.getElementById('loader-contact');
     this.img = document.getElementById('hand-img');
+
+    this.init();
+    this.animateImage();
   }
 
   animateImage() {
@@ -29,26 +31,28 @@ export class ContactForm {
   }
 
   isFormValid() {
-    return this.name.validity.valid
-      && this.email.validity.valid
-      && this.subject.validity.valid
-      && this.message.validity.valid
+    return (
+      this.name.validity.valid &&
+      this.email.validity.valid &&
+      this.subject.validity.valid &&
+      this.message.validity.valid
+    );
   }
 
   // Clears the inputs on page load
   clearInputs() {
-    this.inputFields.forEach(input => {
+    this.inputFields.forEach((input) => {
       input.value = '';
-    })
+    });
   }
 
   async postContactFormData(event) {
-    event.preventDefault(); // will prevent the page from reload on form submit 
+    event.preventDefault(); // will prevent the page from reload on form submit
     const formData = {
       name: this.name.value,
       email: this.email.value.trim(),
       subject: this.subject.value,
-      message: this.message.value
+      message: this.message.value,
     };
 
     // Show loader
@@ -62,27 +66,26 @@ export class ContactForm {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData)
+          body: JSON.stringify(formData),
         }
-      )
+      );
       if (res.status === 200) {
         this.loaderContact.classList.add('hidden');
         this.form.classList.add('hidden');
         this.successMessage.classList.remove('hidden');
       } else {
-
         console.log('error:', res.status, res);
         // this.form.classList.remove('hidden');
         this.errorMessage.classList.remove('hidden');
         this.loaderContact.classList.add('hidden');
-        throw new Error('Something went wrong')
+        throw new Error('Something went wrong');
       }
     } catch (error) {
-      console.log('contact error:', error)
+      console.log('contact error:', error);
       this.form.classList.remove('hidden');
       this.errorMessage.classList.remove('hidden');
       this.loaderContact.classList.add('hidden');
-      throw new Error('Something went wrong')
+      throw new Error('Something went wrong');
     }
   }
 
@@ -91,7 +94,6 @@ export class ContactForm {
   }
 
   focusOnInput(input) {
-
     this.isFormValid()
       ? this.submitContactBtn.removeAttribute('disabled')
       : this.submitContactBtn.setAttribute('disabled', 'disabled');
@@ -109,13 +111,12 @@ export class ContactForm {
     this.clearInputs();
 
     // Goes through the array inputFields
-    this.inputFields.forEach(input => {
+    this.inputFields.forEach((input) => {
       // Creates an event listener on the current input_field
       // console.log('this:', this);
       input.addEventListener('input', this.focusOnInput.bind(this));
-    })
+    });
 
     this.submitForm();
   }
-
 }

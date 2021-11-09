@@ -1,10 +1,12 @@
 section {
-  &:not(.gallery) {
+  &:not(.gallery, .residence) {
     min-height: 100vh;
   }
 
   @include screen-sm {
-    min-height: 100vh;
+    &:not(.residence) {
+      min-height: 100vh;
+    }
   }
 
   &.contact {

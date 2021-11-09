@@ -1,7 +1,7 @@
 export class Company {
-
   constructor() {
     this.img = document.getElementById('bela-come-img');
+    this.animateImage();
   }
 
   animateImage() {
@@ -10,12 +10,9 @@ export class Company {
     window.addEventListener('scroll', (e) => {
       const imgTop = this.img.getBoundingClientRect().top;
 
-      if (imgTop < triggerBottom) {
-        this.img.classList.add('show');
-      } else {
-        this.img.classList.remove('show');
-      }
+      imgTop < triggerBottom
+        ? this.img.classList.add('show')
+        : this.img.classList.remove('show');
     });
   }
-
 }

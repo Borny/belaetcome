@@ -1,5 +1,4 @@
 export class GalleryMobile {
-
   constructor() {
     this.galleryContainer = document.getElementById('gallery-container');
     this.carouselDesktop = document.getElementById('carousel-desktop');
@@ -14,13 +13,18 @@ export class GalleryMobile {
     this.galleryLength = this.galleryItems.length;
     this.idx = 0;
     this.visibleImgRange = 5;
+
+    this.init();
+    this.animateImage();
+    this.initCarousel();
   }
 
   animateImage() {
     const triggerBottom = window.innerHeight / 2;
 
     window.addEventListener('scroll', (e) => {
-      const galleryContainerTop = this.galleryContainer.getBoundingClientRect().top;
+      const galleryContainerTop =
+        this.galleryContainer.getBoundingClientRect().top;
 
       if (galleryContainerTop < triggerBottom) {
         this.galleryContainer.classList.add('show');
@@ -31,7 +35,8 @@ export class GalleryMobile {
     });
 
     window.addEventListener('scroll', (e) => {
-      const carouselContainerTop = this.carouselDesktop.getBoundingClientRect().top;
+      const carouselContainerTop =
+        this.carouselDesktop.getBoundingClientRect().top;
 
       if (carouselContainerTop < triggerBottom) {
         this.carouselDesktop.classList.add('show');
@@ -42,10 +47,13 @@ export class GalleryMobile {
   }
 
   initCarousel() {
-
     // Setting the images size
-    this.galleryItems.forEach(item => item.style.width = `${this.imgWidth}px`);
-    this.galleryItems.forEach(item => item.style.height = `${this.imgWidth}px`);
+    this.galleryItems.forEach(
+      (item) => (item.style.width = `${this.imgWidth}px`)
+    );
+    this.galleryItems.forEach(
+      (item) => (item.style.height = `${this.imgWidth}px`)
+    );
 
     // Highlighting the first image
     this.galleryItems[this.imgHighlightIdx].classList.add('hightlight');
@@ -63,7 +71,7 @@ export class GalleryMobile {
       if (this.idx <= 0) {
         this.btnLeft.setAttribute('disabled', true);
       }
-    })
+    });
 
     // LEFT BUTTON
     this.btnRight.addEventListener('click', () => {
@@ -74,8 +82,7 @@ export class GalleryMobile {
       if (this.idx >= this.galleryLength - 1) {
         this.btnRight.setAttribute('disabled', true);
       }
-    })
-
+    });
   }
 
   changeImage() {
@@ -94,7 +101,7 @@ export class GalleryMobile {
   }
 
   highlightImg() {
-    this.galleryItems.forEach(item => item.classList.remove('hightlight'));
+    this.galleryItems.forEach((item) => item.classList.remove('hightlight'));
     this.galleryItems[this.imgHighlightIdx].classList.add('hightlight');
   }
 
@@ -105,11 +112,10 @@ export class GalleryMobile {
       } else {
         item.classList.remove('hide');
       }
-    })
+    });
   }
 
   init() {
-
     const images = document.querySelectorAll('.image--item');
     const imagesNumber = this.galleryContainer.children.length;
     const sliderControlsContainer = document.getElementById('slider--controls');
@@ -130,47 +136,53 @@ export class GalleryMobile {
         } else {
           control.classList.remove('active');
         }
-      })
-    }
+      });
+    };
 
-    const unify = e => e.changedTouches ? e.changedTouches[0] : e;
+    const unify = (e) => (e.changedTouches ? e.changedTouches[0] : e);
 
     let locked = false;
 
     const lock = (e) => {
       x0 = unify(e).clientX;
 
-      this.galleryContainer.classList.toggle('smooth', !(locked = true))
+      this.galleryContainer.classList.toggle('smooth', !(locked = true));
     };
 
     const drag = (e) => {
       e.preventDefault();
 
       if (locked)
-        this.galleryContainer.style.setProperty('--tx', `${Math.round(unify(e).clientX - x0)}px`)
+        this.galleryContainer.style.setProperty(
+          '--tx',
+          `${Math.round(unify(e).clientX - x0)}px`
+        );
     };
 
     let w;
     const size = () => {
-      w = window.innerWidth
-    }
+      w = window.innerWidth;
+    };
 
     const move = (e) => {
       if (locked) {
-        let
-          dx = unify(e).clientX - x0,
+        let dx = unify(e).clientX - x0,
           s = Math.sign(dx),
-          f = +(s * dx / w).toFixed(2);
+          f = +((s * dx) / w).toFixed(2);
 
-        if ((imageIndex > 0 || s < 0) && (imageIndex < imagesNumber - 1 || s > 0) && f > .2) {
-          this.galleryContainer.style.setProperty('--i', imageIndex -= s);
+        if (
+          (imageIndex > 0 || s < 0) &&
+          (imageIndex < imagesNumber - 1 || s > 0) &&
+          f > 0.2
+        ) {
+          this.galleryContainer.style.setProperty('--i', (imageIndex -= s));
           f = 1 - f;
         }
 
         this.galleryContainer.style.setProperty('--tx', '0px');
         this.galleryContainer.style.setProperty('--f', f);
         this.galleryContainer.classList.toggle('smooth', !(locked = false));
-        x0 = null
+        x0 = null;
       }
       activateSliderControlBackground();
     };
@@ -184,7 +196,7 @@ export class GalleryMobile {
       const sliderControlElement = document.createElement('span');
       sliderControlElement.classList.add('slider--control');
       sliderControlsContainer.appendChild(sliderControlElement);
-    })
+    });
 
     this.galleryContainer.addEventListener('mousedown', lock, false);
     this.galleryContainer.addEventListener('touchstart', lock, false);
@@ -194,6 +206,5 @@ export class GalleryMobile {
     this.galleryContainer.addEventListener('touchmove', drag, false);
 
     activateSliderControlBackground();
-
   }
 }

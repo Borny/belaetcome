@@ -1,6 +1,6 @@
 import './styles/main.scss';
 
-import {} from './js/loader';
+import { Loader } from './js/loader';
 import { Company } from './js/company';
 import { Furiosa } from './js/furiosa';
 import { Collapse } from './js/repertoire';
@@ -9,36 +9,14 @@ import { CalendarModal } from './js/modal';
 import { GalleryMobile } from './js/gallery';
 import { ContactForm } from './js/contact-form';
 
-// Company
-const company = new Company();
-company.animateImage();
-
-// Furiosa
-const furiosa = new Furiosa();
-furiosa.animateImage();
-
-// Collapse
-const collapse = new Collapse();
-collapse.collapsing();
-
-// Mobile Navigation
-const mobileNav = new MobileNav();
-mobileNav.clickActions();
-
-// Modal
-const calendarModal = new CalendarModal();
-calendarModal.initCalendarModalHandler();
-
-// Gallery
-const gallery = new GalleryMobile();
-gallery.init();
-gallery.animateImage();
-gallery.initCarousel();
-
-// Contact form
-const contactForm = new ContactForm();
-contactForm.init();
-contactForm.animateImage();
+new Loader();
+new Company();
+new Furiosa();
+new Collapse();
+new MobileNav();
+new CalendarModal();
+new GalleryMobile();
+new ContactForm();
 
 /////////
 // FORM
