@@ -50,6 +50,11 @@
       }
     }
 
+    &__video {
+      display: flex;
+      justify-content: center;
+    }
+
     &__image {
       grid-area: containerImage;
 
