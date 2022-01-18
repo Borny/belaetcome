@@ -52,6 +52,5 @@ new ContactForm();
 
 // // SUBMIT BUTTON
 // submitContactBtn.addEventListener('click', () => {
-//   console.log('button clicked');
 //   alert('you sure you wanna do this???')
 // })

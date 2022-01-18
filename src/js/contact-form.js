@@ -74,14 +74,14 @@ export class ContactForm {
         this.form.classList.add('hidden');
         this.successMessage.classList.remove('hidden');
       } else {
-        console.log('error:', res.status, res);
+        console.error('error:', res.status, res);
         // this.form.classList.remove('hidden');
         this.errorMessage.classList.remove('hidden');
         this.loaderContact.classList.add('hidden');
         throw new Error('Something went wrong');
       }
     } catch (error) {
-      console.log('contact error:', error);
+      console.error('contact error:', error);
       this.form.classList.remove('hidden');
       this.errorMessage.classList.remove('hidden');
       this.loaderContact.classList.add('hidden');
@@ -113,7 +113,6 @@ export class ContactForm {
     // Goes through the array inputFields
     this.inputFields.forEach((input) => {
       // Creates an event listener on the current input_field
-      // console.log('this:', this);
       input.addEventListener('input', this.focusOnInput.bind(this));
     });
 
