@@ -1,5 +1,13 @@
 import './styles/main.scss';
 
+import HeroHTML from './components/hero.html';
+import CompanyHTML from './components/company.html';
+import FuriosaHTML from './components/furiosa.html';
+import GalleryHTML from './components/gallery.html';
+import ResidenceHTML from './components/residence.html';
+import ContactHTML from './components/contact.html';
+import FooterHTML from './components/footer.html';
+
 import { Loader } from './js/loader';
 import { Company } from './js/company';
 import { Furiosa } from './js/furiosa';
@@ -9,14 +17,27 @@ import { CalendarModal } from './js/modal';
 import { GalleryMobile } from './js/gallery';
 import { ContactForm } from './js/contact-form';
 
-new Loader();
-new Company();
-new Furiosa();
-new Collapse();
-new MobileNav();
-new CalendarModal();
-new GalleryMobile();
-new ContactForm();
+const root = document.getElementById('root');
+
+window.addEventListener('load', () => {
+  root.innerHTML =
+    HeroHTML +
+    CompanyHTML +
+    FuriosaHTML +
+    GalleryHTML +
+    ResidenceHTML +
+    ContactHTML +
+    FooterHTML;
+
+  new Loader();
+  new Company();
+  new Furiosa();
+  new Collapse();
+  new MobileNav();
+  new CalendarModal();
+  new GalleryMobile();
+  new ContactForm();
+});
 
 /////////
 // FORM

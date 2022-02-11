@@ -1,16 +1,13 @@
 export class Loader {
   constructor() {
+    this.loader = document.getElementById('loader');
+    this.hero = document.getElementById('hero');
+
     this.onLoad();
   }
 
   onLoad() {
-    window.addEventListener('load', () => {
-      document.getElementById('loader').style.opacity = 0;
-      document.getElementById('loader-path').style.opacity = 0;
-
-      setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-      }, 1000);
-    });
+    this.loader.classList.add('hidden');
+    this.hero.classList.remove('hidden');
   }
 }
