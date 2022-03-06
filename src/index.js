@@ -2,6 +2,7 @@ import './styles/main.scss';
 
 import HeroHTML from './components/hero.html';
 import CompanyHTML from './components/company.html';
+import AvrilHTML from './components/avril.html';
 import FuriosaHTML from './components/furiosa.html';
 import GalleryHTML from './components/gallery.html';
 import ResidenceHTML from './components/residence.html';
@@ -23,6 +24,7 @@ window.addEventListener('load', () => {
   root.innerHTML =
     HeroHTML +
     CompanyHTML +
+    AvrilHTML +
     FuriosaHTML +
     GalleryHTML +
     ResidenceHTML +

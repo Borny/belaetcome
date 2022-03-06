@@ -1,0 +1,96 @@
+.avril {
+  position: relative;
+  padding: 0 0 4rem;
+
+  @include screen-sm {
+    padding: 0 0 10rem;
+  }
+
+  .avril--bg {
+    background: $primary-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: skew(0, 15deg);
+  }
+
+  .container {
+    position: relative;
+    padding: 1rem;
+
+    @include screen-sm {
+      display: grid;
+      grid-template: 'containerTitle containerTitle' auto 'containerContent containerImage' auto 'containerRepertoire containerRepertoire' auto / 1fr 1fr;
+    }
+
+    &__title {
+      @include screen-sm {
+        padding: 0 0 0 5rem;
+        grid-area: containerTitle;
+      }
+    }
+
+    &__content {
+      @include screen-sm {
+        padding: 0 0 0 5rem;
+        grid-area: containerContent;
+      }
+
+      p {
+        text-align: justify;
+        margin: 0 0 1rem;
+      }
+
+      .content__quote {
+        @include screen-sm {
+          margin: 3rem 0;
+        }
+      }
+    }
+
+    &__video {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__image {
+      grid-area: containerImage;
+
+      .image {
+        width: 50%;
+        display: block;
+        margin: 2rem auto;
+        transform: translateY(30px);
+        transition: 0.4s ease-in;
+        opacity: 0;
+
+        &.show {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        @include screen-sm {
+          margin: 10rem 0 0 4rem;
+        }
+      }
+    }
+
+    &__repertoire {
+      grid-area: containerRepertoire;
+    }
+
+    &__cta {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      padding: 2rem 0 0;
+
+      .btn--base {
+        min-width: 250px;
+        margin: 0 0 1rem;
+      }
+    }
+  }
+}
