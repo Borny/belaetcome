@@ -22,31 +22,17 @@
 
     @include screen-sm {
       display: grid;
-      grid-template: 'containerTitle containerTitle' auto 'containerContent containerImage' auto 'containerRepertoire containerRepertoire' auto / 1fr 1fr;
+      grid-template: 'containerDiffusion containerImage' auto 'containerRepertoire containerImage' auto / 2fr 1fr;
     }
 
-    &__title {
+    &__diffusion {
       @include screen-sm {
         padding: 0 0 0 5rem;
-        grid-area: containerTitle;
-      }
-    }
-
-    &__content {
-      @include screen-sm {
-        padding: 0 0 0 5rem;
-        grid-area: containerContent;
+        grid-area: containerDiffusion;
       }
 
-      p {
-        text-align: justify;
-        margin: 0 0 1rem;
-      }
-
-      .content__quote {
-        @include screen-sm {
-          margin: 3rem 0;
-        }
+      > .secondary-heading {
+        padding: 1rem 0;
       }
     }
 

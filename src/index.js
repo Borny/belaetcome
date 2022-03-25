@@ -1,43 +1,47 @@
-import './styles/main.scss';
+import './styles/main.scss'
 
-import HeroHTML from './components/hero.html';
-import CompanyHTML from './components/company.html';
-import FuriosaHTML from './components/furiosa.html';
-import GalleryHTML from './components/gallery.html';
-import ResidenceHTML from './components/residence.html';
-import ContactHTML from './components/contact.html';
-import FooterHTML from './components/footer.html';
+import HeroHTML from './components/hero.html'
+import CompanyHTML from './components/company.html'
+import AvrilHTML from './components/avril.html'
+import FuriosaHTML from './components/furiosa.html'
+import GalleryHTML from './components/gallery.html'
+import ResidenceHTML from './components/residence.html'
+import ContactHTML from './components/contact.html'
+import FooterHTML from './components/footer.html'
 
-import { Loader } from './js/loader';
-import { Company } from './js/company';
-import { Furiosa } from './js/furiosa';
-import { Collapse } from './js/repertoire';
-import { MobileNav } from './js/mobile-nav';
-import { CalendarModal } from './js/modal';
-import { GalleryMobile } from './js/gallery';
-import { ContactForm } from './js/contact-form';
+import { Loader } from './js/loader'
+import { Company } from './js/company'
+import { Avril } from './js/avril'
+import { Furiosa } from './js/furiosa'
+import { Collapse } from './js/repertoire'
+import { MobileNav } from './js/mobile-nav'
+import { CalendarModal } from './js/modal'
+import { GalleryMobile } from './js/gallery'
+import { ContactForm } from './js/contact-form'
 
-const root = document.getElementById('root');
+const root = document.getElementById('root')
 
 window.addEventListener('load', () => {
   root.innerHTML =
     HeroHTML +
     CompanyHTML +
+    AvrilHTML +
     FuriosaHTML +
     GalleryHTML +
     ResidenceHTML +
     ContactHTML +
-    FooterHTML;
+    FooterHTML
 
-  new Loader();
-  new Company();
-  new Furiosa();
-  new Collapse();
-  new MobileNav();
-  new CalendarModal();
-  new GalleryMobile();
-  new ContactForm();
-});
+  new Loader()
+  new Company()
+  new Avril()
+  new Furiosa()
+  new Collapse()
+  new MobileNav()
+  new CalendarModal()
+  new GalleryMobile()
+  new ContactForm()
+})
 
 /////////
 // FORM

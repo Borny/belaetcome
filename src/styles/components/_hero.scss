@@ -142,8 +142,8 @@
         background: $tertiary-color;
         transition: 0.5s;
         transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-          opacity 0.55s ease;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 
         &:first-child {
           transform-origin: 0% 0%;
@@ -254,7 +254,7 @@
             margin: 0.5rem 0 0;
           }
 
-          .link--furiosa {
+          .link--highlight {
             font-weight: bold;
             font-size: 1.3rem;
           }
