@@ -239,6 +239,12 @@
       }
     }
 
+&__main-nav{
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
     ul {
       display: flex;
 
@@ -328,4 +334,21 @@
       }
     }
   }
+  &__extra-nav{
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .link{
+      font-family: SourceCode;
+      color: $white;
+      transition: transform 0.2s ease-in;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+    }
+  }
+}
+
 }

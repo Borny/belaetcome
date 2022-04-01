@@ -1,4 +1,10 @@
 .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+
   &--base {
     color: $white;
     background: transparent;
@@ -8,24 +14,30 @@
     text-align: center;
     transition: 0.2s ease-in;
     cursor: pointer;
-
+    
     &:hover {
       background: $white;
     }
   }
-
+  
   &--plain {
+    border: 2px solid $primary-color;
     color: $white;
     background: $primary-color;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    border: 2px solid $primary-color;
-    text-align: center;
-    transition: 0.2s ease-in;
-    cursor: pointer;
 
     &:hover {
       color: $primary-color;
+      background: $white;
+    }
+  }
+
+  &--secondary {
+    border: 2px solid $secondary-color;
+    color: $white;
+    background: $secondary-color;
+
+    &:hover {
+      color: $secondary-color;
       background: $white;
     }
   }
