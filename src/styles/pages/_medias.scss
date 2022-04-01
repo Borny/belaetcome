@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: $secondary-color;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  .h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $white;
+    margin: 2rem auto;
+  }
+
+  .medias {
+    &__container {
+      padding: 0 0 3rem;
+    }
+
+    &__item__content {
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,15 +1,22 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    code: './src/js/code.js',
+    mediation: './src/js/mediation.js',
+    medias: './src/js/medias.js',
+  },
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    path: __dirname + '/dist',
     clean: true,
     assetModuleFilename: 'images/[hash][ext][query]',
   },
+
   module: {
     rules: [
       {
@@ -41,11 +48,31 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      inject: true,
-      template: path.resolve(__dirname, 'src', 'index.html'),
-    }),
+    new webpack.ProgressPlugin(),
     new FaviconsWebpackPlugin('src/images/favicon.svg'),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      inject: true,
+      chunks: ['index'],
+      filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/code-login.html',
+      inject: true,
+      chunks: ['code'],
+      filename: 'code-login.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/mediation.html',
+      inject: true,
+      chunks: ['mediation'],
+      filename: 'mediation.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/medias.html',
+      inject: true,
+      chunks: ['medias'],
+      filename: 'medias.html',
+    }),
   ],
-};
+}
