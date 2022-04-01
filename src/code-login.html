@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="loader-validation-code" class="loader-contact hidden">
+        <svg class="circular-loader" viewBox="0 0 50 50" style="width: 100px">
+          <circle class="loader-path" id="loader-path" cx="25" cy="25" r="20" fill="none" stroke="#5dbeba" stroke-width="2" />
+        </svg>
+      </div>
+      <h2 class="h2">Veuillez rentrer le code</h2>
+      <form id="code-form" class="form-login" novalidate>
+        <div></div>
+        <div class="code-container">
+          <input type="number" class="code" placeholder="0" min="0" max="9" required />
+          <input type="number" class="code" placeholder="0" min="0" max="9" required />
+          <input type="number" class="code" placeholder="0" min="0" max="9" required />
+          <input type="number" class="code" placeholder="0" min="0" max="9" required />
+        </div>
+
+        <button type="submit" id="validation-btn" class="btn btn--secondary" disabled>Valider</button>
+        <div id="error-message" class="text-error hidden">Ce code est invalide</div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+// Tools
+@import './tools/variables.scss';
+@import './tools/mixins.scss';
+@import './tools/placeholder.scss';
+
+// Base
+@import './base/normalize.scss';
+@import './base/base.scss';
+
+// Pages
+@import './pages/mediation.scss';
+
+// Utility
+@import './components/buttons.scss';
+@import './components/loader.scss';
