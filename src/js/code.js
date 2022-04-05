@@ -49,8 +49,8 @@ class CodeLogin {
 
     try {
       const res = await fetch(
-        // 'https://belaetcome.herokuapp.com/api/contact',
-        'http://localhost:9000/api/auth',
+        'https://belaetcome.herokuapp.com/api/auth',
+        // 'http://localhost:9000/api/auth',
         // 'http://localhost:9000/api/contactffff',
         {
           method: 'POST',
