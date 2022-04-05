@@ -8,6 +8,8 @@ class Medias {
 
   initMedia() {
 
+    const token = localStorage.getItem('token')
+
     if (!token) {
       location.replace('/code-login.html')
       return
