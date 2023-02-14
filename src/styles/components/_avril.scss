@@ -32,9 +32,9 @@
       }
     }
 
-    .secondary-heading{
-      padding:0 0 1rem;
-    }
+    // .secondary-heading{
+    //   padding:0 0 1rem;
+    // }
 
     &__content {
       @include screen-sm {
@@ -82,7 +82,7 @@
       display: flex;
       flex-flow: column;
       align-items: center;
-      padding: 2rem 0 0;
+      padding: 2rem 0;
 
       .btn--base {
         min-width: 250px;
