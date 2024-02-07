@@ -88,6 +88,18 @@ textarea {
 ///////////
 // CLASSES
 ///////////
+.flex{
+  display: flex;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
 .hidden {
   display: none !important;
 }
@@ -122,6 +134,14 @@ textarea {
 
 .text-center {
   text-align: center;
+}
+
+.mb-sm{
+  margin: 0 0 0.5rem 0; 
+}
+
+.mb-md{
+  margin: 0 0 1rem 0; 
 }
 
 .phone-number {
