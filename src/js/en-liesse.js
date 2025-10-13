@@ -1,12 +1,10 @@
-export class Avril {
+export class EnLiesse {
   constructor() {
-    this.img = document.getElementById("avril-img");
+    this.img = document.getElementById("en-liesse-img");
     this.animateImage();
   }
-
   animateImage() {
     const triggerBottom = (window.innerHeight / 5) * 4;
-
     window.addEventListener("scroll", (e) => {
       const imgTop = this.img.getBoundingClientRect().top;
       imgTop < triggerBottom
