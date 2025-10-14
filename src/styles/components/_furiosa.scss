@@ -22,10 +22,12 @@
 
     @include screen-sm {
       display: grid;
-      grid-template: 'containerDiffusion containerImage' auto 'containerRepertoire containerImage' auto / 2fr 1fr;
+      grid-template: "containerDiffusion containerImage" auto "containerRepertoire containerImage" auto / 2fr 1fr;
     }
 
     &__diffusion {
+      max-width: $screen-md;
+
       @include screen-sm {
         padding: 0 0 0 5rem;
         grid-area: containerDiffusion;
