@@ -16,19 +16,19 @@ Vanilla JS (ES6 classes) + SCSS bundled by Webpack 5 (no framework). Don't add f
 
 | Entry | Page template | Styles |
 | --- | --- | --- |
-| `src/index.js` | `src/index.html` | `src/styles/main.scss` |
+| `src/index.js` | `src/index.ejs` | `src/styles/main.scss` |
 | `src/js/code.js` | `src/code-login.html` | `src/styles/code.scss` |
 | `src/js/mediation.js` | `src/mediation.html` | `src/styles/mediation.scss` |
 | `src/js/medias.js` | `src/medias.html` | `src/styles/medias.scss` |
 
 Each entry imports its own SCSS; CSS is injected at runtime by `style-loader` (no separate CSS file).
 
-**Main page assembly:** `src/index.html` is only a shell (`#root`, loader spinner, calendar modal). `src/index.js` imports every `src/components/*.html` as a string (html-loader), concatenates them into `#root.innerHTML` on `window.load` (concatenation order = page order), then instantiates one JS class per section from `src/js/`. Consequences:
-- JS classes must be instantiated after the injection, never at module top level.
+**Main page assembly:** `src/index.ejs` is the page template (head, loader spinner, calendar modal, `#root`). It is processed by HtmlWebpackPlugin's lodash template engine, not html-loader (hence the `.ejs` extension): `#root` includes each `src/components/*.html` at build time with `<%= require('./components/foo.html').default %>` (include order = page order), so the built `dist/index.html` contains the full page. The components still go through html-loader, so their image paths are resolved as usual. `src/index.js` then instantiates one JS class per section from `src/js/` on `window.load`. Consequences:
+- Keep the JS class instantiation in the `load` handler, never at module top level (the loader spinner is hidden by the `Loader` class).
 - The classes run in sequence; a missing element ID throws and stops every class after it.
-- Adding a section means: component HTML + optional class in `src/js/` + import/concat/instantiate in `src/index.js` + SCSS partial in `src/styles/components/` imported in `main.scss`.
+- Adding a section means: component HTML + `require` line in `src/index.ejs` + optional class in `src/js/` instantiated in `src/index.js` + SCSS partial in `src/styles/components/` imported in `main.scss`.
 - Navigation is in `src/components/hero.html` and exists twice (mobile menu and desktop menu) — update both.
-- The show calendar popup content lives in `src/index.html`, not in a component.
+- The show calendar popup content and the SEO/Open Graph meta tags live in `src/index.ejs`, not in a component. Images referenced directly in `src/index.ejs` must use `<%= require('./images/foo.jpg') %>` (html-loader doesn't process this file).
 
 **Assets:** images/fonts referenced from HTML or SCSS are emitted as hashed files in `dist/images/`. Image paths in components are relative to `src/components/` (e.g. `../images/foo.jpg`). Favicons are generated from `src/images/favicon.svg`. PDFs linked with `<a href>` are **not** processed by webpack: the dev server serves `src/` statically so they work in dev, but they are not copied into `dist/`. When adding or changing a PDF link, check that the file is reachable in `dist/`.
 

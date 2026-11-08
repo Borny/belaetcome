@@ -72,7 +72,17 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Sections are inserted at build time; their order here is the page order -->
+      <%= require('./components/hero.html').default %>
+      <%= require('./components/company.html').default %>
+      <%= require('./components/en-liesse.html').default %>
+      <%= require('./components/furiosa.html').default %>
+      <%= require('./components/gallery.html').default %>
+      <%= require('./components/residence.html').default %>
+      <%= require('./components/contact.html').default %>
+      <%= require('./components/footer.html').default %>
+    </div>
 
     <!-- Loader -->
     <div id="loader" class="loader">
