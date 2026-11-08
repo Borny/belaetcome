@@ -15,3 +15,7 @@
 # files
 /todo.md
 /ISSUES.md
+
+# Editor caches (written by Adobe Illustrator)
+/design/GPUCache
+/design/debug.log
