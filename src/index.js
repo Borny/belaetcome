@@ -12,6 +12,10 @@ import { ContactForm } from "./js/contact-form";
 
 // The sections are already in the HTML (inserted at build time by src/index.ejs)
 window.addEventListener("load", () => {
+  // Footer copyright year (the HTML holds a static fallback)
+  const copyrightYear = document.getElementById("copyright-year");
+  if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
+
   new Loader();
   new Company();
   new EnLiesse();
