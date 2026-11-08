@@ -32,8 +32,26 @@ $danger: $red;
 // FONTS
 //////////
 
-// Roboto
+// Roboto (self-hosted variable fonts, weights 300–700, latin subset)
 $fontRoboto: 'Roboto', sans-serif;
+$roboto-path: '../assets/fonts/roboto/Roboto-Variable-latin.woff2';
+$roboto-italic-path: '../assets/fonts/roboto/Roboto-Italic-Variable-latin.woff2';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url($roboto-path) format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url($roboto-italic-path) format('woff2');
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 // Source Code
 $sourceCode-path: '../assets/fonts/source-code-pro/SourceCodePro-Medium.otf';
