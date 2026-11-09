@@ -77,10 +77,11 @@
     opacity: 0;
   }
 }
-// Residency request form (Google Form iframe, once the form exists)
+// Residency request form (Google Form iframe)
 .residence-form__iframe {
   display: block;
   width: 100%;
-  height: 70vh;
+  // Leaves room for the modal header and the 10vh top offset
+  height: 65vh;
   border: 0;
 }
