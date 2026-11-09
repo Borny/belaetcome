@@ -1,27 +1,45 @@
-export class CalendarModal {
+// Popups sharing the #modal-backdrop. Each one opens from its button and
+// closes with its close button, a click on the backdrop or the Escape key.
+export class Modals {
   constructor() {
-    this.initCalendarModalHandler();
+    this.backdrop = document.getElementById("modal-backdrop");
+    this.openedModal = null;
+
+    this.register("show-calendar-btn", "calendar-modal");
+    this.register("show-residence-form-btn", "residence-form-modal");
+
+    this.backdrop.addEventListener("click", () => this.close());
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") this.close();
+    });
   }
 
-  toggleModal() {
-    const body = document.getElementsByTagName("body")[0];
-    const modalBackdrop = document.getElementById("modal-backdrop");
-    const modalCalendar = document.getElementById("calendar-modal");
-    modalBackdrop.classList.toggle("visible");
-    modalCalendar.classList.toggle("visible");
-    body.classList.toggle("modal-open");
+  register(openBtnId, modalId) {
+    const openBtn = document.getElementById(openBtnId);
+    const modal = document.getElementById(modalId);
+
+    // No button on the page (e.g. the "Calendrier" button is hidden).
+    if (!openBtn || !modal) return;
+
+    openBtn.addEventListener("click", () => this.open(modal));
+    modal
+      .querySelector(".btn__modal--close")
+      .addEventListener("click", () => this.close());
   }
 
-  initCalendarModalHandler() {
-    const modalBtnHandler = document.getElementById("show-calendar-btn");
-    const closeModalBtn = document.getElementById("close-modal-btn");
-    const modalBackdrop = document.getElementById("modal-backdrop");
+  open(modal) {
+    this.close();
+    this.openedModal = modal;
+    modal.classList.add("visible");
+    this.backdrop.classList.add("visible");
+    document.body.classList.add("modal-open");
+  }
 
-    // No "Calendrier" button on the page: the calendar is hidden.
-    if (!modalBtnHandler) return;
-
-    modalBtnHandler.addEventListener("click", this.toggleModal);
-    closeModalBtn.addEventListener("click", this.toggleModal);
-    modalBackdrop.addEventListener("click", this.toggleModal);
+  close() {
+    if (!this.openedModal) return;
+    this.openedModal.classList.remove("visible");
+    this.backdrop.classList.remove("visible");
+    document.body.classList.remove("modal-open");
+    this.openedModal = null;
   }
 }

@@ -134,7 +134,12 @@
     <div class="modal calendar" id="calendar-modal">
       <div class="modal__content">
         <div class="modal__header">
-          <button type="button" id="close-modal-btn" class="btn__modal--close">
+          <button
+            type="button"
+            id="close-modal-btn"
+            class="btn__modal--close"
+            aria-label="Fermer"
+          >
             <svg
               viewbox="0 0 100 100"
               xmlns="http://www.w3.org/2000/svg"
@@ -181,6 +186,43 @@
           <br />
           Représentation à Tarnos
         </p>
+      </div>
+    </div>
+
+    <!-- Residency request form modal (opened from the résidence section) -->
+    <div class="modal residence-form" id="residence-form-modal">
+      <div class="modal__content">
+        <div class="modal__header">
+          <button type="button" class="btn__modal--close" aria-label="Fermer">
+            <svg
+              viewbox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="transparent"
+            >
+              <line
+                x1="0"
+                y1="0"
+                x2="100"
+                y2="100"
+                stroke="#444"
+                stroke-width="10"
+              />
+              <line
+                x1="0"
+                y1="100"
+                x2="100"
+                y2="0"
+                stroke="#444"
+                stroke-width="10"
+              />
+            </svg>
+          </button>
+        </div>
+        <h2 class="secondary-heading">Demande de résidence</h2>
+        <!-- TODO: replace this paragraph with the Google Form once it exists:
+        <iframe class="residence-form__iframe" src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true" title="Formulaire de demande de résidence" loading="lazy"></iframe>
+        -->
+        <p class="text-center mb-md">Formulaire à venir…</p>
       </div>
     </div>
   </body>

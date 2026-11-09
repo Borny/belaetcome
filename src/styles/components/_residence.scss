@@ -50,6 +50,43 @@
       p {
         margin: 0 0 1rem;
       }
+
+      // Same layout as https://lacleduquai.com/lcdq/residence
+      .residence__title {
+        margin: 0 0 1rem;
+      }
+
+      .description {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem;
+      }
+
+      .description-item {
+        display: flex;
+        align-items: flex-start;
+        margin: 1rem 0 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &__sublist {
+          margin: 0.5rem 0 0 2rem;
+        }
+
+        &--icon {
+          flex: none;
+          width: 20px;
+          height: 20px;
+          margin: 0 1rem 0 0;
+        }
+
+        &--content {
+          flex: 1;
+          margin: 0;
+        }
+      }
     }
 
     &__cta {

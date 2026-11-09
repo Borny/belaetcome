@@ -6,7 +6,7 @@ import { EnLiesse } from "./js/en-liesse";
 import { Furiosa } from "./js/furiosa";
 import { Collapse } from "./js/repertoire";
 import { MobileNav } from "./js/mobile-nav";
-import { CalendarModal } from "./js/modal";
+import { Modals } from "./js/modal";
 import { GalleryMobile } from "./js/gallery";
 import { ContactForm } from "./js/contact-form";
 
@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
   new Furiosa();
   new Collapse();
   new MobileNav();
-  new CalendarModal();
+  new Modals();
   new GalleryMobile();
   new ContactForm();
 });
