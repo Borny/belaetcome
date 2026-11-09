@@ -39,6 +39,30 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
+        options: {
+          sources: {
+            list: [
+              '...',
+              // PDFs linked with <a href> are processed too (see the pdf rule below)
+              {
+                tag: 'a',
+                attribute: 'href',
+                type: 'src',
+                filter: (tag, attribute, attributes) =>
+                  attributes.some(
+                    ({ name, value }) => name === 'href' && /\.pdf$/i.test(value)
+                  ),
+              },
+            ],
+          },
+        },
+      },
+      // Copies the linked PDFs into dist/ under their own name, at the root,
+      // so their URLs stay the same (e.g. /Accueil_LalaLandes.pdf)
+      {
+        test: /\.pdf$/i,
+        type: 'asset/resource',
+        generator: { filename: '[name][ext]' },
       },
       // will load the fonts
       {
