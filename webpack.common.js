@@ -49,7 +49,13 @@ module.exports = {
   },
   plugins: [
     new webpack.ProgressPlugin(),
-    new FaviconsWebpackPlugin('src/images/favicon.svg'),
+    new FaviconsWebpackPlugin({
+      logo: 'src/images/favicon.svg',
+      favicons: {
+        // No iOS splash screens: the site isn't installed as an app (saves ~3.4 MB)
+        icons: { appleStartup: false },
+      },
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
       inject: true,
