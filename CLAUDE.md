@@ -30,7 +30,7 @@ Each entry imports its own SCSS; CSS is injected at runtime by `style-loader` (n
 - Navigation is in `src/components/hero.html` and exists twice (mobile menu and desktop menu) — update both.
 - The show calendar popup content and the SEO/Open Graph meta tags live in `src/index.ejs`, not in a component. Images referenced directly in `src/index.ejs` must use `<%= require('./images/foo.jpg') %>` (html-loader doesn't process this file).
 
-**Assets:** images/fonts referenced from HTML or SCSS are emitted as hashed files in `dist/images/`. Image paths in components are relative to `src/components/` (e.g. `../images/foo.jpg`). Favicons are generated from `src/images/favicon.svg`. PDFs linked with `<a href>` are **not** processed by webpack: the dev server serves `src/` statically so they work in dev, but they are not copied into `dist/`. When adding or changing a PDF link, check that the file is reachable in `dist/`.
+**Assets:** images/fonts referenced from HTML or SCSS are emitted as hashed files in `dist/images/`. Image paths in components are relative to `src/components/` (e.g. `../images/foo.jpg`). Favicons are generated from `src/images/favicon.svg`. PDFs linked with `<a href="….pdf">` are processed by html-loader and copied to the root of `dist/` under their own name (rule in `webpack.common.js`), so their paths must be relative to the HTML file like images (e.g. `../foo.pdf` from a component). PDFs that nothing links to are not copied.
 
 **Styles:** `src/styles/tools/_variables.scss` holds colours, breakpoints and the z-index scale — use these instead of hard-coded values.
 
