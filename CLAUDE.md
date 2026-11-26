@@ -46,4 +46,4 @@ Each entry imports its own SCSS; CSS is injected at runtime by `style-loader` (n
 4. **Commit** — see below.
 
 - `dist/` is committed and deployed as-is (`.htaccess` handles www/https redirects on Apache). Run `npm run build` after changes in `src/` and commit `dist/` with them.
-- Active work happens on `master`; branch off and open PRs against `master`. The `dev` branch (GitHub's default) is stale since 2022.
+- Active work happens on `main`; branch off and open PRs against `main`. The `dev` branch (GitHub's default) is stale since 2022.

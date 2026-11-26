@@ -63,4 +63,4 @@ Website for **Compagnie Bela & Côme**, a contemporary dance and theatre company
 - **Login backend:** the code login depends on a Heroku app. Heroku ended its free tier in 2022, so check that `belaetcome.herokuapp.com` still responds, or the media area may be unreachable.
 - **Weak protection:** the media page is "protected" only by checking in the browser whether a token exists. Anyone can set a value in `localStorage` and get in, and the YouTube videos are public anyway.
 - **Debug leftovers:** `src/js/code.js` contains a lot of `console.log` calls.
-- **Branches:** active work happens on `master`. The `dev` branch (GitHub's default) has been stale since April 2022.
+- **Branches:** active work happens on `main`. The `dev` branch (GitHub's default) has been stale since April 2022.
